@@ -1,0 +1,207 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=0" />
+		<title>chapter_01_Meet_WebAssembly</title>
+		<style>
+			.class___line_head {
+				margin-left : 2em;
+			}
+			.class___code {
+				color : yellow;
+				background-color : black;
+				line-height : 24px;
+				font-size : 18px;
+				vertical-align : bottom;
+				white-space : nowrap;
+			}
+			.class___tab {
+				display : inline-block;
+				width : 4ex;
+				overflow-x : hidden;
+				line-height : 24px;
+				font-size : 18px;
+				vertical-align : bottom;
+				white-space : pre-wrap;
+			}
+			.class___code_last_line {
+				display : inline-block;
+				white-space : nowrap;
+			}
+			.shell_instruction {
+				color : yellow;
+				background-color : black;
+				font-weight : 800;
+				padding : 4px;
+			}
+			section {
+				margin-top : 60px;
+			}
+			section > p {
+				padding-left : 2em;
+				line-height : 180%;
+			}
+			#id___textarea___input_source_code {
+				height : 100px;
+				width : calc(100% - 6px);
+				margin-bottom : 10px;
+			}
+			#id___textarea___output_html_code {
+				height : 100px;
+				width : calc(100% - 6px);
+				margin-top : 10px;
+			}
+		</style>
+		<script>
+			convert_code_to_html = () => {
+				let source = document.getElementById('id___textarea___input_source_code');
+				let target = document.getElementById('id___textarea___output_html_code');
+				let s = source.value;
+				//console.log(s);
+				s = s.trim();
+				s = s.replace(/\r/g, '');
+				s = s.replace(/&/g, '&amp;');
+				s = s.replace(/ /g, '&nbsp;');
+				s = s.replace(/>/g, '&gt;');
+				s = s.replace(/</g, '&lt;');
+				s = s.replace(/\t/g, '<span class="class___tab">&#9;</span>');
+				s = s.replace(/\n/g, '<br/>\n');
+				s = s.replace(/\n/g, '\n\t');
+				s += '<br/>';
+				//console.log(s);
+				target.value = '<div class="class___code">\n\t' + s + '\n</div>';
+			}
+			window.onload = (e) => {
+				let button = document.getElementById('id___button___convert_code_to_html');
+				//console.log(button);
+				button.addEventListener('click', convert_code_to_html, false);
+			}
+		</script>
+	</head>
+	<body>
+		<article>
+			<header>
+				<h3>chapter_01_Meet_WebAssembly</h3>
+			</header>
+			<section>
+				<h3>代码转换</h3>
+				<div>
+					<textarea id="id___textarea___input_source_code"></textarea>
+					<br/>
+					<button id="id___button___convert_code_to_html">轉換</button>
+					<br/>
+					<textarea id="id___textarea___output_html_code"></textarea>
+				</div>
+			</section>
+			<section>
+<!--
+				<div>
+					This chapter covers
+
+					What WebAssembly is
+
+					The problems that WebAssembly solves
+
+					How WebAssembly works
+
+					What makes WebAssembly secure
+
+					The languages you can use to create a WebAssembly module
+
+					When it comes to web development, one thing that’s top
+
+					of mind for most web developers is performance, from
+
+					how fast the web page loads to how responsive it is
+
+					overall. A number of studies have shown that if your
+
+					web page doesn’t load within three seconds, 40% of your
+
+					visitors will leave. That percentage increases for every
+
+					additional second it takes your page to load.
+
+					How long it takes your web page to load isn’t the only
+
+					issue. According to one Google article, if a web page has
+
+					poor performance, 79% of visitors say they’re less likely
+
+					to purchase from that website again (Daniel An and Pat
+
+					Meenan, “Why marketers should care about mobile
+
+					page speed” [July 2016], http://mng.bz/MOlD).
+
+					As web technologies have advanced, there’s been a push
+
+					to move more and more applications to the web. This
+
+					has presented developers with another challenge,
+
+					because web browsers support only one programming
+
+					language: JavaScript.
+
+					Having a single programming language across all
+
+					browsers is good in one sense—you only have to write
+
+					your code once, and you know that it will run in every
+
+					browser. You still have to test in each browser you
+
+					intend to support, because vendors sometimes
+
+					implement things slightly differently. Also, sometimes
+
+					one browser vendor won’t add a new feature at the same
+
+					time other vendors do. Overall, though, having one
+
+					language to support is easier than having four or five.
+
+					The downside of browsers supporting only JavaScript,
+
+					however, is that the applications we want to move to the
+
+					web aren’t written in JavaScript—rather, they’re written
+
+					in languages like C++.
+
+					JavaScript is a great programming language, but we’re
+
+					now asking it to do more than it was originally designed
+
+					to do—heavy computations for games, for example—and
+
+					we’re asking it to run really fast.
+				</div>
+-->
+				<div>
+					&nbsp;&nbsp;&nbsp;&nbsp;Once a browser has compiled the WebAssembly bytecode into machine code, the compiled module can be passed to a web worker (we’ll dig into web workers in chapter 9, but, for now, know that web workers are a way to create threads in JavaScript) or to another browser window. The compiled module can even be used to create additional instances of the module.
+				</div>
+				<br/>
+				<div>
+					一但浏览器编译WebAssembly字节码为机器码, 编译后的模块 能够传输给web worker(我们挖掘web worker在第9章，但是，现在在javascript中web workers是创建线程的一种方法)或者另一个浏览器窗口。编译好的模块甚至能够用来创建额外的模块实例。
+				</div>
+			</section>
+			<section>
+				<div>
+					<img src="imgs/01fig06_alt.jpg"/>
+				</div>
+			</section>
+			<section>
+				<div>
+					1.4.1. Preamble
+					<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;The preamble contains a magic number (0x00 0x61 0x73 0x6D, which is \0asm) that distinguishes a WebAssembly module from an ES6 module. This magic number is then followed by a version (0x01 0x00 0x00 0x00, which is 1) that indicates which version of the WebAssembly binary format was used to create the file.
+					<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;Only one version of the binary format exists at the moment. One of the goals with WebAssembly is to keep everything backward-compatible as new features are being added and to avoid having to increase the version number. If a feature ever arises that can’t be implemented without breaking things, then the version number will be increased.
+				</div>
+			</section>
+		</article>
+	</body>
+</html>
