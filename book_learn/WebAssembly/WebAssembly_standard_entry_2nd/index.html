@@ -1,0 +1,204 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=0" />
+		<title>WebAssembly标准入门(第2版)</title>
+		<style>
+			.class___line_head {
+				margin-left : 2em;
+			}
+			.class___code {
+				color : yellow;
+				background-color : black;
+				line-height : 24px;
+				font-size : 18px;
+				vertical-align : bottom;
+				white-space : nowrap;
+			}
+			.class___tab {
+				display : inline-block;
+				width : 4ex;
+				overflow-x : hidden;
+				line-height : 24px;
+				font-size : 18px;
+				vertical-align : bottom;
+				white-space : pre-wrap;
+			}
+			.class___code_last_line {
+				display : inline-block;
+				white-space : nowrap;
+			}
+			.shell_instruction {
+				color : yellow;
+				background-color : black;
+				font-weight : 800;
+				padding : 4px;
+			}
+			section {
+				margin-top : 60px;
+			}
+			section > p {
+				padding-left : 2em;
+				line-height : 180%;
+			}
+			#id___textarea___input_source_code {
+				height : 100px;
+				width : calc(100% - 6px);
+				margin-bottom : 10px;
+			}
+			#id___textarea___output_html_code {
+				height : 100px;
+				width : calc(100% - 6px);
+				margin-top : 10px;
+			}
+		</style>
+		<script>
+			convert_code_to_html = () => {
+				let source = document.getElementById('id___textarea___input_source_code');
+				let target = document.getElementById('id___textarea___output_html_code');
+				let s = source.value;
+				//console.log(s);
+				s = s.trim();
+				s = s.replace(/\r/g, '');
+				s = s.replace(/&/g, '&amp;');
+				s = s.replace(/ /g, '&nbsp;');
+				s = s.replace(/>/g, '&gt;');
+				s = s.replace(/</g, '&lt;');
+				s = s.replace(/\t/g, '<span class="class___tab">&#9;</span>');
+				s = s.replace(/\n/g, '<br/>\n');
+				s = s.replace(/\n/g, '\n\t');
+				s += '<br/>';
+				//console.log(s);
+				target.value = '<div class="class___code">\n\t' + s + '\n</div>';
+			}
+			window.onload = (e) => {
+				let button = document.getElementById('id___button___convert_code_to_html');
+				//console.log(button);
+				button.addEventListener('click', convert_code_to_html, false);
+			}
+		</script>
+	</head>
+	<body>
+		<article>
+			<header>
+				<h3>WebAssembly标准入门(第2版)</h3>
+			</header>
+			<section>
+				<h3>代码转换</h3>
+				<div>
+					<textarea id="id___textarea___input_source_code"></textarea>
+					<br/>
+					<button id="id___button___convert_code_to_html">轉換</button>
+					<br/>
+					<textarea id="id___textarea___output_html_code"></textarea>
+				</div>
+			</section>
+			<section>
+				<h3>文本格式</h3>
+				<div>
+					;;标识行注释, 等同于C语言或javascript中得//
+				</div>
+				<div>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					内存定义及导出
+					<br/>
+					<br/>
+					<div class="class___code">
+						(memory&nbsp;$export_memory&nbsp;1)<br/>
+						(export&nbsp;"memory"&nbsp;(memory&nbsp;$export_memory))<br/>
+					</div>
+					定义64KB内存别名为"export_memory", 其中的1为分配1页内存, 每页内存为64KB, 内存最少分配1页内存最大分配64K页即4GB内存(注意单位"页"与"B"), 最大4GB是因为指针变量是用的32位整形
+					<br/>
+					导出"export_memory"并对外命名为"memory"
+					<br/>
+					或直接一行
+					<div class="class___code">
+						(memory&nbsp;$export_memory&nbsp;(export&nbsp;"memory")&nbsp;1)<br/>
+					</div>
+					这种形式中别名"export_memory"可以没有
+					<div class="class___code">
+						(memory&nbsp;(export&nbsp;"memory")&nbsp;1)<br/>
+					</div>
+				</div>
+				<div>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					全局变量的定义及导出
+					<br/>
+					<br/>
+					(global &lt;别名&gt; &lt;导出&gt; &lt;类型&gt; &lt;值&gt;)
+					<br/>
+					&lt;别名&gt;:在模块中的别名，方便在模块中的引用, 可以省略, 但在模块中使用时要按照全局变量再在文件中的顺序来指定索引编号不方便
+					<br/>
+					&lt;导出&gt;:指定外部访问时的别名, 若无需外部访问可以省略或在别处集中导出
+					<br/>
+					&lt;类型&gt;:数据类型有4种分别为[i32, i64, f32, f64], 此处的类型还要区分知否可变, 若直接指定数据类型则为只读, 用(mut 数据类型)则为可写
+					<br/>
+					&lt;值&gt;:初始值, 可以用0x开头使用16进制
+					<div class="class___code">
+						(global&nbsp;$i32_MAX&nbsp;(export&nbsp;"MAX_i32")&nbsp;i32&nbsp;(i32.const&nbsp;0xffffffff))<br/>
+					</div>
+					定义名为"i32_MAX"的i32类型的全局只读变量(也可叫常量)初始值为16进制的ffffffff即2的32次方减1, 并导出命名为"MAX_i32"
+					<div class="class___code">
+						(global&nbsp;$length&nbsp;(export&nbsp;"length")&nbsp;(mut&nbsp;i32)&nbsp;(i32.const&nbsp;10))<br/>
+					</div>
+					定义名为"length"的i32类型的可写全局变量初始值为10, 并导出命名为"length"
+
+				</div>
+				<div>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					函数定义及导出
+					<br/>
+					<br/>
+					(func &lt;别名&gt; &lt;导出&gt; &lt;函数签名&gt; &lt;函数体&gt;)
+					<br/>
+					&lt;别名&gt;:函数在模块中的别名，方便在模块中的引用, 可以省略, 但在模块中调用时要按照函数在文件中的顺序来指定索引编号不方便
+					<br/>
+					&lt;导出&gt;:指定外部访问时的别名, 若无需外部访问可以省略或在别处集中导出
+					<br/>
+					&lt;函数签名&gt;:函数的输入参数和返回值, 类似于C语言中的函数声明, 入参用(param $别名 类型), 返回值用(result 类型), 入参在返回值前面, 入参的别名可以省略
+					<br/>
+					&lt;函数体&gt;:不可省略，函数中的具体指令等
+					<br/>
+					<div class="class___code">
+						(func&nbsp;$sum_i32&nbsp;(export&nbsp;"sum")&nbsp;(param&nbsp;$p0&nbsp;i32)&nbsp;(param&nbsp;$p1&nbsp;i32)&nbsp;(result&nbsp;i32)<br/>
+						<span class="class___tab">&#9;</span>get_local&nbsp;$p0<br/>
+						<span class="class___tab">&#9;</span>get_local&nbsp;$p1<br/>
+						<span class="class___tab">&#9;</span>i32.add<br/>
+						)<br/>
+					</div>
+					定义别名为"sum_i32"的函数, 入参为i32类型的p0和p1, 返回值为i32类型, 导出并将导出名命名为"sum"
+					<br/>
+					函数体的指令类似于x86的汇编语言, 变量放在栈上
+					<br/>
+					get_local $p0为将入参"p0"变量的值压栈
+					<br/>
+					get_local $p1为将入参"p1"变量的值压栈
+					<br/>
+					i32.add将栈顶的两个i32类型的值出栈并求和再将和的值压栈
+					<br/>
+					此时栈上仅比函数定义中多出一个i32类型的值, 对应(result i32)有一个i32类型的返回值
+					<br/>
+					也可以将导出和函数定义分开来写
+					<div class="class___code">
+						(func&nbsp;$sum_i32&nbsp;(param&nbsp;$p0&nbsp;i32)&nbsp;(param&nbsp;$p1&nbsp;i32)&nbsp;(result&nbsp;i32)<br/>
+						<span class="class___tab">&#9;</span>get_local&nbsp;$p0<br/>
+						<span class="class___tab">&#9;</span>get_local&nbsp;$p1<br/>
+						<span class="class___tab">&#9;</span>i32.add<br/>
+						)<br/>
+						(export&nbsp;"sum"&nbsp;(func&nbsp;$sum_i32))<br/>
+					</div>
+				</div>
+			</section>
+		</article>
+	</body>
+</html>
