@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=0" />
+		<title>chapter_02_A look inside WebAssembly modules</title>
+		<style>
+			.class___line_head {
+				margin-left : 2em;
+			}
+			.class___code {
+				color : yellow;
+				background-color : black;
+				line-height : 24px;
+				font-size : 18px;
+				vertical-align : bottom;
+				white-space : nowrap;
+			}
+			.class___tab {
+				display : inline-block;
+				width : 4ex;
+				overflow-x : hidden;
+				line-height : 24px;
+				font-size : 18px;
+				vertical-align : bottom;
+				white-space : pre-wrap;
+			}
+			.class___code_last_line {
+				display : inline-block;
+				white-space : nowrap;
+			}
+			.shell_instruction {
+				color : yellow;
+				background-color : black;
+				font-weight : 800;
+				padding : 4px;
+			}
+			section {
+				margin-top : 60px;
+			}
+			section > p {
+				padding-left : 2em;
+				line-height : 180%;
+			}
+			#id___textarea___input_source_code {
+				height : 100px;
+				width : calc(100% - 6px);
+				margin-bottom : 10px;
+			}
+			#id___textarea___output_html_code {
+				height : 100px;
+				width : calc(100% - 6px);
+				margin-top : 10px;
+			}
+		</style>
+		<script>
+			convert_code_to_html = () => {
+				let source = document.getElementById('id___textarea___input_source_code');
+				let target = document.getElementById('id___textarea___output_html_code');
+				let s = source.value;
+				//console.log(s);
+				s = s.trim();
+				s = s.replace(/\r/g, '');
+				s = s.replace(/&/g, '&amp;');
+				s = s.replace(/ /g, '&nbsp;');
+				s = s.replace(/>/g, '&gt;');
+				s = s.replace(/</g, '&lt;');
+				s = s.replace(/\t/g, '<span class="class___tab">&#9;</span>');
+				s = s.replace(/\n/g, '<br/>\n');
+				s = s.replace(/\n/g, '\n\t');
+				s += '<br/>';
+				//console.log(s);
+				target.value = '<div class="class___code">\n\t' + s + '\n</div>';
+			}
+			window.onload = (e) => {
+				let button = document.getElementById('id___button___convert_code_to_html');
+				//console.log(button);
+				button.addEventListener('click', convert_code_to_html, false);
+			}
+		</script>
+	</head>
+	<body>
+		<article>
+			<header>
+				<h3>chapter_02_A look inside WebAssembly modules</h3>
+			</header>
+			<section>
+				<h3>代码转换</h3>
+				<div>
+					<textarea id="id___textarea___input_source_code"></textarea>
+					<br/>
+					<button id="id___button___convert_code_to_html">轉換</button>
+					<br/>
+					<textarea id="id___textarea___output_html_code"></textarea>
+				</div>
+			</section>
+			<section>
+				<div>
+					2.1 Known sections
+					<br/>
+					<span class="class___tab"></span>
+					The Table section holds a typed array of references, like functions, that can’t be stored in the module’s linear memory as raw bytes.
+					<span class="class___tab"></span>
+					This section provides one of the core security aspects of WebAssembly by giving the WebAssembly framework a way to map objects in a secure way.
+					<span class="class___tab"></span>
+					Your code doesn’t have direct access to the references stored in the table. Instead, when your code wants to access the data referenced in this section, it asks for the framework to operate on the item at a specific index in the table.
+					<span class="class___tab"></span>
+					The WebAssembly framework then reads the address stored at that index and performs the action. When dealing with functions, for example, this enables the use of function pointers by specifying the table index.
+				</div>
+			</section>
+		</article>
+	</body>
+</html>
