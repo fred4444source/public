@@ -100,10 +100,13 @@
 					<br/>
 					<span class="class___tab"></span>
 					The Table section holds a typed array of references, like functions, that can’t be stored in the module’s linear memory as raw bytes.
+					<br/>
 					<span class="class___tab"></span>
 					This section provides one of the core security aspects of WebAssembly by giving the WebAssembly framework a way to map objects in a secure way.
+					<br/>
 					<span class="class___tab"></span>
 					Your code doesn’t have direct access to the references stored in the table. Instead, when your code wants to access the data referenced in this section, it asks for the framework to operate on the item at a specific index in the table.
+					<br/>
 					<span class="class___tab"></span>
 					The WebAssembly framework then reads the address stored at that index and performs the action. When dealing with functions, for example, this enables the use of function pointers by specifying the table index.
 				</div>
