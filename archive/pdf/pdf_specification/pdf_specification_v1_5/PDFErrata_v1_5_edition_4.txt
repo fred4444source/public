@@ -1,0 +1,244 @@
+
+Errata for PDF Reference, fourth edition
+(as published online at the partners.adobe.com web site on 8/28/2003)
+-----------------
+
+Copyright (c) 2004 Adobe Systems Incorporated. All rights reserved.
+Last modified: 29 October 2004
+
+General
+-------
+
+Front Matter
+------------
+
+Chapter 1
+---------
+
+Pages 6 - 7, Section 1.4, append two new sentences to the first
+bulleted item, so that it reads as follows in its entirety:
+
+o  Authors of software that accepts input in the form of the
+   Portable Document Format must make reasonable efforts to ensure
+   that the software they create respects the access permissions and
+   permissions controls listed in Table 3.20 of this specification, to
+   the extent that they are used in any particular document. These
+   access permissions express the rights that the document's author
+   has granted to users of the document. It is the responsibility of
+   Portable Document Format consuming software to respect the author's
+   intent.
+
+Then remove the third bulleted item, which reads:
+
+ o Accessing the document in ways not permitted by the document's
+   access permissions is a violation of the document author's
+   copyright.
+
+
+Chapter 2
+---------
+
+Chapter 3
+---------
+
+Page 73, Table 3.13, File trailer dictionary, /ID entry: Change
+"Optional" to "Optional, but strongly recommended". Append this
+sentence: "Although this entry is optional, its absence might prevent
+this file from functioning in some workflows that depend on files
+being uniquely identified."
+
+Add the following entry:
+
+/XRefStm   integer   (Optional; meaningful only in an update section of a
+hybrid-reference file; PDF 1.5) Offset of cross-reference stream (see
+"Compatibility with PDF 1.4" on page 85).
+
+Page 83, in the itemization of restrictions on cross-reference
+streams, add a reference to the following implementation note: The
+only filter that Acrobat 6 supports for cross-reference streams is
+/FlateDecode. Note that Example 3.11 on page 89 shows a
+cross-reference stream that specifies a /ASCIIHexDecode filter. This
+is for the purpose of elucidating the cross-reference data format;
+however, the example as written would be unacceptable to Acrobat 6.
+
+Pages 89-90, Example 3.11, make the following corrections:
+
+Change:
+  /Type /XRefStm
+  /Index [2 9]   % This stream contains entries for objects 2 through 10
+to:
+  /Type /XRef
+  /Index [2 10]   % This stream contains entries for objects 2 through 11
+  /Size 100
+
+Change:
+  /Filter /ASCIIHexDecode
+to:
+  /Filter /ASCIIHexDecode   % See implementation note XX
+[referring to the implementation note for page 83, above]
+
+Change:
+  02 0002 07   % Entry for object 9 (in object stream 2, index 7)
+  01 1323 0    % Entry for object 10 (0x1323 = 4899)
+to: 
+  02 0002 07   % Entry for object 10 (in object stream 2, index 7)
+  01 1323 0    % Entry for object 11 (0x1323 = 4899)
+
+Pages 95-103, Section 3.5.2: Throughout this section, all algorithms
+and permission bits that are labeled "Revision 3" should be labeled
+"Revision 3 or greater".
+
+Page 103, Section 3.5.3, second paragraph: Change the citation for
+PKCS#7 to refer to RFC 2315, listed in the Bibliography.
+
+Page 123, Figure 3.6: The node that is the parent of Page 3 and Page 4
+should be labeled "Pages", not "Page".
+
+Page 158, Table 3.43, Subtype entry, change to:
+
+Subtype   integer   (Optional) The embedded file's type. This is
+encoded as an integer according to Mac OS conventions: a 4-character
+ASCII text literal converted to a 32-bit integer, high-order byte
+first. For instance, the file type 'CARO' is represented as the
+hexadecimal integer 4341524F, which is the decimal integer 1128354383.
+
+Creator   integer   (Optional) The embedded file's creator signature,
+encoded the same as for Subtype.
+
+
+Chapter 4
+---------
+
+Page 220, Lab Color Spaces, change "In a this type of space" to "In
+this type of space".
+
+Page 224, paragraph after bullets, change "As of version 1.4" to "As
+of version 1.5".
+
+Page 230, Rendering Intents, second paragraph, add the following to
+the methods for specifying rendering intent: "the /RI entry in a
+graphics state parameter dictionary (see Section 4.3.4)".
+
+
+Chapter 5
+---------
+
+Chapter 6
+---------
+
+Chapter 7
+---------
+
+Chapter 8
+---------
+
+Page 561, Note in /Border entry, and page 566, Note below table:
+Change this to an implementation note (moved to appendix H and
+referenced from preceding text). Change it to state that Acrobat 3 and
+4 support border style dictionaries only for widget annotations;
+Acrobat 5 supports them for all types except link annotations; Acrobat
+6 and later support them for link annotations as well.
+
+Page 570, Table 8.16: Annotation type /Polyline should be spelled
+/PolyLine.
+
+Page 581, Table 8.25, /Subtype entry: /Polyline should be spelled
+/PolyLine. In the remainder of this table, instances of "Polyline" and
+"Polygon" that are bold-face should instead be normal text and
+lowercase, signifying that they are not keywords but just generic
+terms.
+
+Page 632, Table 8.68, RichText flag: Bit position should be 26, not
+28.
+
+Page 665, PKCS#7 Signatures, change the descriptions of
+adbe.pkcs7.detached and adbe.pkcs7.sha1 to the following:
+
+adbe.pkcs7.detached: The value of Contents is a DER-encoded PKCS#7
+binary data object containing the signature. No data is encapsulated
+in the PKCS#7 signed-data field.
+
+adbe.pkcs7.sha1: The value of Contents is a DER-encoded PKCS#7 binary
+data object containing the signature. The SHA1 digest of the byte
+range is encapsulated in the PKCS#7 signed-data field with ContentInfo
+of type "data".
+
+Page 668, Table 8.96, /Document entry: Append the following note:
+
+Any usage right that allows the document to be modified implicitly
+enables /FullSave. This includes /FillIn, /Import, and /SpawnTemplate
+for the /Form entry, and /Create, /Delete, /Modify, and /Import for
+the /Annots entry.
+
+Page 668, Table 8.96, /Form entry: Append an additional defined value:
+
+/FillIn   Allows the user to save a document on which form fill-in has
+been done.
+
+
+Chapter 9
+---------
+
+Chapter 10
+----------
+
+Page 731, Section 10.6.3, bottom, append the following:
+
+Content items may not be nested within other content items. The
+hierarchical relationship among structure elements is represented
+entirely by the structure tree, not by nesting of the associated
+content items. This gives rise to the following restrictions:
+
+* A marked-content sequence delimiting a structure content item may
+not have another marked-content sequence for a content item nested
+within it (though non-structural marked content is allowed).
+
+* A structure content item may not invoke (with the Do operator) an
+XObject that is itself a structure content item.
+
+Appendix A
+----------
+
+Appendix B
+----------
+
+Appendix C
+----------
+
+Appendix D
+----------
+
+Appendix E
+----------
+
+Appendix F
+----------
+
+Appendix G
+----------
+
+Appendix H
+----------
+
+Appendix I
+----------
+
+Page 984, Section I.2.6: Remove /Rect from the list of form field
+entries to be included in the digest.
+
+
+Bibliography
+------------
+
+Page 1003, near top: Update the ICC Specification citation to the one
+that is appropriate for PDF 1.5, as follows --
+
+Specification ICC.1:2001-12, File Format for Color Profiles
+
+Page 1004, insert the following citation in the list of IETF RFCs:
+
+RFC 2315, PKCS #7: Cryptographic Message Syntax, Version 1.5
+
+
+Index
+-----

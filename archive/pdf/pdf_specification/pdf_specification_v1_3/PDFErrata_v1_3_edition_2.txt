@@ -1,0 +1,509 @@
+Errata for PDF Reference, second edition
+(as published in the first printing, July 2000)
+-----------------
+
+Copyright (c) 2002 Adobe Systems Incorporated. All rights reserved.
+Last modified: 9 January 2002
+
+General
+-------
+
+There is a significant correction to the description of MediaBox and
+CropBox and their relationship to default user space, which affects
+documentation in several parts of the specification. In general, we
+remove or reword all descriptions that state or imply that the origin
+of default user space coincides with the lower-left corner of the
+output media.
+
+
+Front Matter
+------------
+
+Chapter 1
+---------
+
+Pages 5 - 6, Copyright Permission: This section refers to an Adobe
+Patent Clarification Notice. That notice is on the Adobe web site in
+the Technical Notes section at http://partners.adobe.com/asn/developer/ .
+
+
+Chapter 2
+---------
+
+Chapter 3
+---------
+
+Page 39, Section 3.2.8, The Null Object, replace the first paragraph
+with:
+
+The null object has a type and value that are unequal to those of any
+other object. There is only one object of type null, denoted by the
+keyword null. Specifying the null object as the value of a dictionary
+entry is equivalent to omitting the entry entirely (see Section 3.2.6,
+"Dictionary Objects"). Additionally, an indirect object reference to a
+nonexistent object is treated the same as a null object (see Section
+3.2.9, "Indirect Objects").
+
+[Note: This eliminates the mention of "empty or uninitialized
+positions", which is confusing. In PDF (unlike PostScript), there is
+no way to create an array or dictionary without specifying all the
+elements.]
+
+Page 45, Table 3.6, there should be an additional row, immediately
+preceding the last row that emits EOD. The input sequence is 66, the
+output code is 66, and no code is added to the table (since there is
+no next input character).
+
+Page 46, near top, the encoded result should be:
+
+  80 0B 60 50 22 0C 0C 85 01
+
+Page 78, replace the MediaBox and CropBox descriptions as follows:
+
+MediaBox   rectangle   (Required; inheritable) A rectangle (see Section
+3.8.3, "Rectangles"), expressed in default user space units,
+describing the boundaries of the physical medium on which the page is
+intended to be displayed or printed (see Section 8.6.1, "Page
+Boundaries").
+
+CropBox   rectangle   (Optional; inheritable) A rectangle, expressed in
+default user space units, describing the visible region of default
+user space. When the page is displayed or printed, the contents of the
+page should be clipped (cropped) to this rectangle and then imposed on
+the medium in some implementation-defined manner (see Section 8.6.1,
+"Page Boundaries). Default value: the value of MediaBox.
+
+
+Chapter 4
+---------
+
+Page 126, second paragraph, replace the second and subsequent
+sentences with the following:
+
+The CropBox entry in the page dictionary specifies the rectangle of
+user space that is to correspond to the visible area of the output
+medium (display window or printed page). The positive x axis extends
+horizontally to the right and the positive y axis extends vertically
+upward, as in standard mathematical practice (subject to alteration by
+the Rotate entry in the page dictionary). The length of a unit along
+both the x and y axes is 1/72 inch. This coordinate system is called
+default user space.
+
+Note: In PostScript, the origin of default user space always
+corresponds to the lower-left corner of the medium. While this
+convention is common in PDF documents as well, it is not required;
+CropBox can specify that any rectangle of default user space is to be
+made visible on the medium.
+
+Page 126, fourth paragraph, replace the second sentence with: "Only a
+small portion of this plane corresponds to the imageable area of the
+output device: a rectangular region defined by the CropBox entry in
+the page dictionary."
+
+Page 126, fifth paragraph: Delete this paragraph; a corrected version
+of this material will be added to Section 8.6.1, "Page Boundaries."
+
+Page 134, at end of section 4.2.3, insert the following:
+
+When rendering graphics objects, it is sometimes necessary for the
+viewer implementation to perform the inverse of a transformation --
+that is, to find the user space coordinates that correspond to a
+specific pair of device space coordinates. Not all transformations are
+invertible. For example, if a matrix contains a, b, c, and d elements
+that are all 0, all user coordinates map to the same device
+coordinates and there is no unique inverse transformation. Such
+noninvertible transformations are not very useful and generally arise
+from unintended operations, such as scaling by 0. Use of a
+noninvertible matrix when painting graphics objects can result in
+unpredictable behavior.
+
+Page 145, BG2 entry, after "If both BG and BG2 are present", insert
+"in the same graphics state parameter dictionary".
+
+Page 145, UCR2 entry, after "If both UCR and UCR2 are present", insert
+"in the same graphics state parameter dictionary".
+
+Page 145, TR2 entry, after "If both TR and TR2 are present", insert
+"in the same graphics state parameter dictionary".
+
+Page 149, h operator: In the last sentence, remove "or the current
+path is empty".
+
+Page 153, following last paragraph, insert: "Note that the above rule
+applies only to zero-length subpaths of the path being stroked, and
+not to zero-length dashes in a dash pattern. In the latter case, the
+line caps are always painted, since their orientation is determined by
+the direction of the underlying path."
+
+Page 171, formula for Y[C]: The second term in the numerator for the
+large fraction should be changed from "(X[W] - X[G]) * Y[W]" to
+"(X[W] - X[G]) * Y[R]".
+
+Page 177, Example 4.9: There should be a > at the end of the last line
+of hexadecimal encoded data.
+
+Page 179, bottom: Delete the reference to implementation note 29.
+
+Pages 183 - 186, Separation Color Spaces: Revise to state that for an
+additive output device, a Separation color space never applies a
+process colorant directly; it always reverts to the alternate color
+space. This is because the model of applying process colorants
+independently does not work as intended on an additive device; for
+instance, painting tints of the /Red component on a white background
+produces a result that varies from white to cyan.
+
+Note: What is being discussed here is colorants for additive devices,
+not the specific names /Red, /Green, and /Blue. In contrast, a printer
+might have a (subtractive) ink named, say, /Red, which should work as
+a Separation color space just the same as any other supported
+colorant.
+
+Page 188, following paragraph after bullets, insert: "Note: A DeviceN
+color space whose components are all /None always discards its output,
+just the same as a Separation color space for /None; it never reverts
+to the alternate color space. Reversion occurs only if at least one
+color component (other than /None) is specified and is not available
+in the device."
+
+Page 198, cs entry: Add a note stating that the names DeviceGray,
+DeviceRGB, DeviceCMYK, and Pattern always identify color spaces
+directly, not resources in the ColorSpace subdictionary.
+
+Also, change the first and second bullets to the following:
+
+* In a DeviceGray, DeviceRGB, CalGray, or CalRGB color space, the
+initial color is all components 0.
+
+* In a DeviceCMYK color space, the initial color is 0 0 0 1.
+
+* In a Lab or ICCBased color space, the initial color is all
+components 0 unless...
+
+Page 216, Background entry, append: The background is applied only
+when the shading is used as part of a shading pattern, not when it is
+painted directly with the sh operator.
+
+Page 262, first paragraph: Add a note stating that the names
+DeviceGray, DeviceRGB, and DeviceCMYK always identify color spaces
+directly, not resources in the ColorSpace subdictionary. This is also
+true of the abbreviations for those names, namely G, RGB, and CMYK.
+
+Page 251, StructParents entry (in image XObject): Change key to
+StructParent.
+
+Page 265, StructParents entry (in form XObject): Replace this entry
+with the following two entries:
+
+StructParent    integer   (Required if the form XObject is a structural
+content item; PDF 1.3) The integer key of the form XObject's entry in
+the structural parent tree.
+
+StructParents   integer   (Required if the form XObject contains
+marked-content sequences that are structural content items; PDF 1.3)
+The integer key of the form XObject's entry in the structural parent
+tree.
+
+Page 267, Table 4.42: A PostScript XObject can alternatively be
+represented as an XObject dictionary whose Subtype entry has the value
+Form and additionally contains a Subtype2 entry whose value is PS.
+
+
+Chapter 5
+---------
+
+Page 283, third paragraph, following "filled and then stroked with
+separate operations.", append "The result must be as if the fill and
+stroke were performed one glyph at a time so that if glyphs overlap,
+they produce the correct appearance of stacked opaque glyphs. (See
+implementation note xx in Appendix H.)"
+
+The new implementation note is: "In Acrobat 4.05 and earlier,
+text-showing operators such as Tj perform the fills for all the glyphs
+followed by the strokes for all the glyphs in a show string. This
+produces incorrect appearance if glyphs overlap."
+
+Page 290, section 5.5.3, Text Space Details, second paragraph: change
+"transformation of the glyph onto the current page" to "transformation
+from text space to device space". Immediately preceding this
+paragraph, insert a note: "Glyphs are actually defined in glyph space,
+whose definition varies according to the font type, as discussed in
+Section 5.1.3 Glyph Positioning and Metrics. Glyph coordinates are
+first transformed from glyph space to text space before being
+subjected to the transformations described below."
+
+Page 295, table 5.8, Entries in a Type 1 font dictionary: Add a note:
+"For the standard 14 fonts, the entries FirstChar, LastChar, Widths,
+and FontDescriptor must either all be present or all be absent.
+Ordinarily, they are absent; specifying them enables a standard font
+to be overridden (see below)."
+
+Page 303, d0 and d1 operator descriptions, add: "This operator is
+permitted only in a content stream appearing in a Type 3 font's
+CharProcs dictionary."
+
+page 315, Table 5.13, DW entry: Default value is 1000, not 0.
+
+Pages 320-1, Table 5.14, Predefined CMaps: Add a note somewhere:
+"Several of the CMaps define mappings from Unicode (UCS-2) encodings
+to character collections. Unicode values appearing in a text string
+are represented high-order byte first."
+
+Page 341, preceding "A TrueType font...", insert the following:
+
+A Type 1 font program can contain a PaintType entry to specify whether
+the glyphs' outlines are to be filled or stroked. This entry is
+ignored for a font that is embedded in a PDF file. In PDF, the
+decision to fill or stroke is entirely determined by the text
+rendering mode parameter; see Section 5.2.5, "Text Rendering Mode".
+This applies also to Type 1 font and Type 0 CIDFont programs
+represented in CFF.
+
+
+Chapter 6
+---------
+
+Chapter 7
+---------
+
+Page 387, third paragraph, append: "A destination value is either an
+array or a dictionary, as discussed in the preceding paragraph."
+
+Note: This enables a GoTo action (but not any other type of action) to
+be used as the target of a named destination.
+
+Page 399, last paragraph, append: "See implementation note xx in
+Appendix H." The implementation note should state: "Acrobat 4.05 and
+early viewers assume that a given annotation dictionary is referenced
+from only one page. Attempting to share an annotation dictionary among
+multiple pages will produce unpredictable behavior."
+
+Page 401, StructParents entry (in annotation dictionary): Change key
+to StructParent.
+
+Page 409, Text Annotations, first paragraph, append: Text annotations
+do not scale and rotate with the page; they behave as if the NoZoom
+and NoRotate annotation flags were always set.
+
+
+Chapter 8
+---------
+
+Page 486, ParentTree entry, change "StructParents" to "StructParent or
+StructParents".
+
+Page 496, second paragraph, last sentence: Change "StructParents" to
+"StructParent or StructParents".
+
+Page 496, last paragraph, first sentence: Change "StructParents" to
+"StructParent or StructParents".
+
+Page 497, Table 8.10, StructParents entry: Replace this entry
+with the following two entries:
+
+StructParent    integer   (Required for all objects that are structural
+content items; PDF 1.3) The integer key of this object's entry in the
+structural parent tree.
+
+StructParents   integer   (Required for all content streams
+containing marked-content sequences that are structural content items;
+PDF 1.3) The integer key of this object's entry in the structural
+parent tree.
+
+Page 497, paragraph below table: Change "StructParents" to
+"StructParent".
+
+Page 498, example (continued): Change "/StructParents" to
+"/StructParent".
+
+Page 501, top: Remove the sentence "Class names must conform to the
+guidelines described in Appendix E." (In fact, class names are treated
+solely as keys in the document's class map; they have no inherent
+semantics and therefore do not need to be registered.)
+
+Pages 514-515: Each of the 3 examples that are preceded by "written in
+the PDF file as" should be enclosed in parentheses.
+
+Page 524, bullet starting at bottom, replace first two sentences with:
+"The media box defines the boundaries of the physical medium on which
+the page is intended to be printed. It may include any extended area
+surrounding the finished page for bleed, printing marks, or other
+purposes. It may also include areas close to the edges of the medium
+that cannot be marked due to physical limitations of the printing
+device."
+
+Page 525, first complete bullet ("The crop box"), insert the following
+before the last sentence: "However, in the absence of additional
+information (such as imposition instructions specified in a job
+ticket), the crop box will determine how the page contents are to be
+positioned on the medium."
+
+Page 527, bullet "Printing a finished page", replace the last sentence
+with: "The media box may be used as advice for selecting media of the
+appropriate size. The crop box and trim box, if present, should be the
+same as the media box. (See implementation note xx in Appendix H.)"
+
+The new implementation note is as follows:
+
+Acrobat provides various user-specified options for determining how
+the region specified by the crop box is to be imposed on the medium
+during printing. These options have varied from one Acrobat version to
+another. However, the default behavior is as follows:
+
+1. Select media size and orientation according to the operating
+system's Print Setup dialog. (Acrobat itself has no direct control
+over this.)
+
+2. Compute an effective crop box by first clipping it with the media
+box, then rotating the page according to the Rotate entry, if
+specified.
+
+3. Center the crop box on the medium, rotating it if necessary to
+enable it to fit in both dimensions.
+
+4. Optionally, scale the page up or down so that the crop box
+coincides with the edges of the medium in the most restrictive
+dimension.
+
+The above description applies only in simple printing workflows that
+lack any other information about how PDF pages are to be imposed on
+media. In some workflows, there will be additional information, either
+in the PDF file itself (BleedBox, TrimBox, or ArtBox) or in a separate
+job ticket (such as PJTF). In those situations, other rules will
+apply, which depend on the details of the workflow.
+
+Consequently, we recommend that PDF files initially be created with
+the crop box the same as the media box (or equivalently, with the crop
+box omitted). This ensures that if the page is printed on that size
+media, the crop box will coincide with the edges of the medium,
+producing predictable and dependable positioning of the page contents.
+On the other hand, if the page is printed on a different size medium,
+the page may be repositioned or scaled in implementation-defined or
+user-specified ways.
+
+[End of implementation note]
+
+Page 533, Note at top: The cross-reference to Section 8.7.1,
+"Separation Information" should be changed to refer to Section 8.6.2,
+"Separation Dictionaries".
+
+
+Appendix A
+----------
+
+Appendix B
+----------
+
+Page 546, Table C.1 Architectural Limits, add the following:
+
+q/Q nesting    12    Maximum depth of graphics state nesting by q and Q
+operators. (This is not a limit of Acrobat per-se, but arises from the
+fact that q and Q are implemented by save and restore when printing to
+PostScript.)
+
+
+Appendix C
+----------
+
+Appendix D
+----------
+
+Appendix E
+----------
+
+Appendix F
+----------
+
+Page 571, Part 11: Delete the line beginning "/O 45".
+
+Page 574, add another bullet: "The ViewerPreferences entry in the
+catalog."
+
+
+Appendix G
+----------
+
+Appendix H
+----------
+
+Page 630, note 29: Delete this note.
+
+Page 632, note 40: The following is the complete list of font names
+that are accepted as the names of standard fonts. In each group, the
+first name is the proper one; the remaining ones are alternatives.
+
+Times-Roman
+TimesNewRomanPSMT
+TimesNewRoman
+TimesNewRomanPS
+
+Times-Bold
+TimesNewRomanPS-BoldMT
+TimesNewRoman,Bold
+TimesNewRomanPS-Bold
+TimesNewRoman-Bold
+
+Times-Italic
+TimesNewRomanPS-ItalicMT
+TimesNewRoman,Italic
+TimesNewRomanPS-Italic
+TimesNewRoman-Italic
+
+Times-BoldItalic
+TimesNewRomanPS-BoldItalicMT
+TimesNewRoman,BoldItalic
+TimesNewRomanPS-BoldItalic
+TimesNewRoman-BoldItalic
+
+Helvetica
+ArialMT
+Arial
+
+Helvetica-Bold
+Arial-BoldMT
+Arial,Bold
+Arial-Bold
+Helvetica,Bold
+
+Helvetica-Oblique
+Arial-ItalicMT
+Arial,Italic
+Arial-Italic
+Helvetica,Italic
+Helvetica-Italic
+
+Helvetica-BoldOblique
+Arial-BoldItalicMT
+Arial,BoldItalic
+Arial-BoldItalic
+Helvetica,BoldItalic
+Helvetica-BoldItalic
+
+Courier
+CourierNew
+CourierNewPSMT
+
+Courier-Bold
+CourierNew,Bold
+Courier,Bold
+CourierNewPS-BoldMT
+CourierNew-Bold
+
+Courier-Oblique
+CourierNew,Italic
+Courier,Italic
+CourierNewPS-ItalicMT
+CourierNew-Italic
+
+Courier-BoldOblique
+CourierNew,BoldItalic
+Courier,BoldItalic
+CourierNewPS-BoldItalicMT
+CourierNew-BoldItalic
+
+
+Bibliography
+------------
+
+Index
+-----
+
