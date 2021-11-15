@@ -1,0 +1,192 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=0" />
+		<title>linear algebra english term</title>
+		<style>
+			.english_word_sound {
+				color : blue;
+			}
+		</style>
+		<script>
+			const body_onloads = [];
+			const body_onload = (e) => {
+				body_onloads.forEach((f) => {
+					f(e);
+				});
+			}
+			{
+				const word_array = [
+					{
+						cn : '线性代数',
+						en : 'linear algebra',
+					},
+					{
+						cn : 'n元线性方程',
+						en : 'linear equation in n variables',
+					},
+					{
+						cn : '解',
+						en : 'solution',
+					},
+					{
+						cn : 'n元线性方程组',
+						en : 'linear equations in n variables',
+					},
+					{
+						cn : '线性组合',
+						en : 'linear combination',
+					},
+					{
+						cn : '等价',
+						en : 'equivalent',
+					},
+					{
+						cn : '初等变换',
+						en : 'elementary transformation',
+					},
+					{
+						cn : '数域',
+						en : 'number field',
+					},
+					{
+						cn : '矩阵',
+						en : 'matrix',
+					},
+					{
+						cn : '元',
+						en : 'element',
+					},
+					{
+						cn : '分量',
+						en : 'entry',
+					},
+					{
+						cn : 'n维向量',
+						en : 'n-dimensional vector',
+					},
+					{
+						cn : '零向量',
+						en : 'zero vector',
+					},
+					{
+						cn : 'n维向量空间',
+						en : 'n-dimensional vector space',
+					},
+					{
+						cn : '行向量',
+						en : 'row vector',
+					},
+					{
+						cn : '列向量',
+						en : 'column vector',
+					},
+					{
+						cn : '行等价',
+						en : 'row equivalent',
+					},
+					{
+						cn : '初等行变换',
+						en : 'elementary transformation of rows',
+					},
+					{
+						cn : '通解',
+						en : 'general solutions',
+					},
+					{
+						cn : '特解',
+						en : 'special solution',
+					},
+					{
+						cn : '系数矩阵',
+						en : 'coefficient matrix',
+					},
+					{
+						cn : '齐次线性方程组',
+						en : 'homogeneous linear equations',
+					},
+					{
+						cn : '零解',
+						en : 'zero solution',
+					},
+					{
+						cn : '平凡解',
+						en : 'trivial solution',
+					},
+					{
+						cn : '非齐次线性方程组',
+						en : 'inhomogeneous linear equations',
+					},
+					{
+						cn : '线性相关',
+						en : 'linearly dependent',
+					},
+					{
+						cn : '线性无关',
+						en : 'linearly independent',
+					},
+				];
+				body_onloads.push((e) => {
+					const div___word_area = document.getElementById('id___div___word_area');
+					const fragment = document.createDocumentFragment();
+					word_array.forEach((p) => {
+						const div = document.createElement('div');
+						div.innerHTML = p.cn + '&nbsp;&nbsp;&nbsp;&nbsp;';
+						const button = document.createElement('button');
+						button.textContent = '>';
+						button.addEventListener('click', (ec) => {
+							const audio = new Audio('./english_sound_mp3/' + p.en.replaceAll(' ', '_') + '.mp3');
+							audio.play();
+						});
+						div.append(button);
+						div.append('(');
+						const english_word_array = p.en.split(/[ -]+/);
+						english_word_array.forEach((w) => {
+							const span = document.createElement('span');
+							span.textContent = w;
+							span.classList.add('english_word_sound');
+							const audio = new Audio('./english_sound_mp3/' + w + '.mp3');
+							span.addEventListener('click', (ec) => {
+								audio.play();
+							});
+							div.append(span);
+							div.append(' ');
+						});
+						div.removeChild(div.childNodes[div.childNodes.length - 1]);
+						div.append(')____');
+						
+						{
+							const button_web = document.createElement('button');
+							button_web.textContent = '>';
+							button_web.addEventListener('click', (ec) => {
+								const audio = new Audio('https://fanyi.baidu.com/gettts?lan=en&text=' + p.en.replaceAll(' ', '%20') + '&spd=3&source=web');
+								audio.play();
+							});
+							div.append(button_web);
+							div.append('(');
+							english_word_array.forEach((w) => {
+								const span = document.createElement('span');
+								span.textContent = w;
+								span.classList.add('english_word_sound');
+								const audio = new Audio('https://fanyi.baidu.com/gettts?lan=en&text=' + w + '&spd=3&source=web');
+								span.addEventListener('click', (ec) => {
+									audio.play();
+								});
+								div.append(span);
+								div.append(' ');
+							});
+							div.removeChild(div.childNodes[div.childNodes.length - 1]);
+							div.append(')');
+						}
+						fragment.append(div);
+					});
+					div___word_area.append(fragment);
+				});
+			}
+		</script>
+	</head>
+	<body onload="body_onload(event);">
+		<div id="id___div___word_area"></div>
+	</body>
+</html>
