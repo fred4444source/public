@@ -159,13 +159,13 @@
 						{
 							const button_web = document.createElement('button');
 							button_web.textContent = '>';
+							const dom_audio_whole = document.createElement('audio');
+							dom_audio_whole.src = 'https://fanyi.baidu.com/gettts?lan=en&text=' + p.en.replaceAll(' ', '%20') + '&spd=3&source=web';
+							button_web.append(dom_audio_whole);
 							button_web.addEventListener('click', (ec) => {
 								//const audio = new Audio('https://fanyi.baidu.com/gettts?lan=en&text=' + p.en.replaceAll(' ', '%20') + '&spd=3&source=web');
 								//audio.play();
-								const dom_audio = document.createElement('audio');
-								dom_audio.src = 'https://fanyi.baidu.com/gettts?lan=en&text=' + p.en.replaceAll(' ', '%20') + '&spd=3&source=web';
-								console.log(dom_audio);
-								dom_audio.play();
+								dom_audio_whole.play();
 							});
 							div.append(button_web);
 							div.append('(');
@@ -180,6 +180,7 @@
 								//	audio.play();
 									dom_audio.play();
 								});
+								span.append(dom_audio);
 								div.append(span);
 								div.append(' ');
 							});
