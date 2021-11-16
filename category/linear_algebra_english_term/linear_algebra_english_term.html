@@ -136,13 +136,13 @@
 						const button = document.createElement('button');
 						button.textContent = '>';
 						button.addEventListener('click', (ec) => {
-							const audio = new Audio('./english_sound_mp3/' + p.en.replaceAll(' ', '_') + '.mp3');
+							const audio = new Audio('./english_sound_mp3/' + p.en.replace(/[ ]+/g, '_') + '.mp3');
 							audio.play();
 						});
 						div.append(button);
 						div.append('(');
-						let en = p.en.replaceAll('[ ]+', ' ');
-						en = en.replaceAll('[-]+', '-');
+						let en = p.en.replace(/[ ]+/g, ' ');
+						en = en.replace(/[-]+/g, '-');
 						const english_word_array = en.split(/[ -]+/);
 						const horizontal_line_array = [...en.matchAll(/[ -]/g)];
 						english_word_array.forEach((w, i) => {
