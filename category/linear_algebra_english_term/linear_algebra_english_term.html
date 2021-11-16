@@ -135,9 +135,9 @@
 						div.innerHTML = p.cn + '&nbsp;&nbsp;&nbsp;&nbsp;';
 						const button = document.createElement('button');
 						button.textContent = '>';
+						const audio_whole = new Audio('./english_sound_mp3/' + p.en.replace(/[ ]+/g, '_') + '.mp3');
 						button.addEventListener('click', (ec) => {
-							const audio = new Audio('./english_sound_mp3/' + p.en.replace(/[ ]+/g, '_') + '.mp3');
-							audio.play();
+							audio_whole.play();
 						});
 						div.append(button);
 						div.append('(');
