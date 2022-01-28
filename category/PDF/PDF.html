@@ -1,0 +1,884 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=0" />
+		<title>PDF log</title>
+		<style>
+			html, body {
+				margin : 0;
+				padding : 0;
+				height : 100%;
+				width : 100%;
+			}
+			.class___line_head {
+				margin-left : 2em;
+			}
+			.class___code {
+				color : yellow;
+				background-color : black;
+				line-height : 24px;
+				font-size : 18px;
+				vertical-align : bottom;
+				white-space : nowrap;
+				overflow-x : auto;
+			}
+			.class___tab {
+				display : inline-block;
+				width : 4ex;
+				overflow-x : hidden;
+				line-height : 24px;
+				font-size : 18px;
+				vertical-align : bottom;
+				white-space : pre-wrap;
+			}
+			.class___code_last_line {
+				display : inline-block;
+				white-space : nowrap;
+			}
+			.class___copy_other_people_content {
+				background-color : #aef5a8;
+				color : black;
+			}
+		</style>
+		<style>
+			.class___PDF_format_learn__table {
+				margin-left : 12ex;
+				border-spacing : 0;
+				border-collapse: collapse;
+				text-align : center;
+				min-width : 400px;
+			}
+			.class___PDF_format_learn__table td, .class___PDF_format_learn__table th {
+				border : 1px solid black;
+			}
+		</style>
+		<script>
+		</script>
+	</head>
+	<body>
+		<article>
+			<header>
+				
+			</header>
+			<section>
+				<div>
+					<span class="class___tab">&#9;</span><a target="_blank" href="https://blog.csdn.net/g0ose/article/details/108963702">PDF规范发展历史_齐楚的专栏-CSDN博客_pdf规范</a>
+					<div class="class___code class___copy_other_people_content">
+						<span class="class___tab">&#9;</span>PDF&nbsp;规范从1993&nbsp;年到现在，已经有过&nbsp;7&nbsp;个版本，六次版本升级，从最初的&nbsp;PDF1.0，版本到现在的&nbsp;PDF1.7,&nbsp;每次的版本升级都会加入一些新的特性，PDF参考说明书也是从最初的100多页到现在的1000多页，但是PDF文件格式的主要特性还是没有改变，主要是随著Adobe&nbsp;Acrobat的新版本而更新的。以下为PDF文件的版本号，公布时间及Acrobat&nbsp;版本号对应列表。<br/>
+						<br/>
+						<span class="class___tab">&#9;</span>1993&nbsp;–&nbsp;PDF&nbsp;1.0&nbsp;/&nbsp;Acrobat&nbsp;1.0<br/>
+						<span class="class___tab">&#9;</span>1994&nbsp;–&nbsp;PDF&nbsp;1.1&nbsp;/&nbsp;Acrobat&nbsp;2.0&nbsp;加入了文档加密（40字节），线索树，名字树，链接，设备独立色彩资源。<br/>
+						<span class="class___tab">&#9;</span>1996&nbsp;–&nbsp;PDF&nbsp;1.2&nbsp;/&nbsp;Acrobat&nbsp;3.0&nbsp;表单,&nbsp;半色调屏幕，和其他的一些高级色彩特性,&nbsp;对中文，日文和韩文的支持<br/>
+						<span class="class___tab">&#9;</span>2000&nbsp;–&nbsp;PDF&nbsp;1.3&nbsp;/&nbsp;Acrobat&nbsp;4.0&nbsp;数字签名,&nbsp;逻辑结构，&nbsp;JavaScript,&nbsp;嵌入式文件，Masked&nbsp;Images,&nbsp;平滑阴影,&nbsp;支持&nbsp;CID字体的附加色彩。<br/>
+						<span class="class___tab">&#9;</span>2001&nbsp;–&nbsp;PDF&nbsp;1.4&nbsp;/&nbsp;Acrobat&nbsp;5.0&nbsp;文件加密&nbsp;(128&nbsp;字节),&nbsp;标签式&nbsp;PDF,&nbsp;访问控制，透明，元数据流<br/>
+						<span class="class___tab">&#9;</span>2003&nbsp;–&nbsp;PDF&nbsp;1.5&nbsp;/&nbsp;Acrobat&nbsp;6.0&nbsp;文档加密&nbsp;(公钥),&nbsp;JPEG&nbsp;2000&nbsp;压缩,&nbsp;可选的内容组，附加的注解类型<br/>
+						<span class="class___tab">&#9;</span>2005&nbsp;–&nbsp;PDF&nbsp;1.6&nbsp;/&nbsp;Acrobat&nbsp;7.0&nbsp;文档加密&nbsp;(AES),增加最大文件支持，加入3D支持，额外的注解类型<br/>
+						<span class="class___tab">&#9;</span>2006&nbsp;–&nbsp;PDF&nbsp;1.7&nbsp;/&nbsp;Acrobat&nbsp;8.0&nbsp;PDF包，自动识别表单域，管理共享审阅，存档&nbsp;Microsoft&nbsp;Outlook&nbsp;、Lotus&nbsp;Notes电子邮件，Microsoft&nbsp;Word格式保存，对&nbsp;AutoCAD&nbsp;的支持<br/>
+						<span class="class___tab">&#9;</span>2006&nbsp;–&nbsp;PDF&nbsp;1.7&nbsp;/&nbsp;Acrobat&nbsp;8.2<br/>
+						<span class="class___tab">&#9;</span>2008&nbsp;–&nbsp;PDF&nbsp;1.7,&nbsp;Adobe&nbsp;Extension&nbsp;Level&nbsp;3&nbsp;/&nbsp;Acrobat&nbsp;9.0<br/>
+						<span class="class___tab">&#9;</span>2009&nbsp;–&nbsp;PDF&nbsp;1.7,&nbsp;Adobe&nbsp;Extension&nbsp;Level&nbsp;5&nbsp;/&nbsp;Acrobat&nbsp;9.1<br/>
+						<br/>
+						<span class="class___tab">&#9;</span>ISO标准ISO&nbsp;32000-1:2008及Adobe&nbsp;PDF&nbsp;1.7格式技术上是并存的。Adobe公司宣布以后不会再发布PDF&nbsp;1.8格式。未来的PDF版本将由ISO技术协会提供。<br/>
+						<br/>
+						<span class="class___tab">&#9;</span>在转换文件的过程中经常在另存为选项中看到PDF/X、PDF/E和PDF/A，这是PDF转换设置时比较重要的选项，如果需要转换出比较专业的PDF文档，还是需要了解的。那么PDF/X、PDF/E和PDF/A具体有什么区别呢？下面就介绍PDF/X、PDF/E和PDF/A标准。<br/>
+						<br/>
+						<span class="class___tab">&#9;</span>PDF/X、PDF/E和PDF/A标准是由国际标准化组织(ISO)定义的。<br/>
+						<br/>
+						<span class="class___tab">&#9;</span>PDF/A<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>2005年9月，国际标准化组织（ISO）批准了针对存档电子文档的PDF/A新标准。根据ISO19005-1标准，PDF/A是PDF的一种变型。它“提供了一种工具，使电子文件在长时间之后依然以一种保留其外观的方式重现，而不管该文件是用什么工具和系统创建、储存或制作的。”<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>这种保留方式使PDF文件可自我持续。PDF/A通过嵌入在文档自身内部显示该文档的信息（内容、颜色、字体、图像，等等），存储这种自我持续。换句话说，PDF/A文件不要求任何附加的外部信息才能适当地显示。但是，此种格式要存储其自身的持续性，就必须排除某些在诸如电影、音响和透明纸等标准PDF文件中的功能。<br/>
+						<span class="class___tab">&#9;</span>PDF/A可分为：PDF/A-1a，PDF/A-1b，PDF/A-2a，PDF/A-2b，PDF/A-2u，PDF/A-3a，PDF/A-3b，PDF/A-3u。<br/>
+						<br/>
+						<span class="class___tab">&#9;</span>PDF/X<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>PDF/X标准应用于图形内容交换；PDF/E标准应用于工程文档的交互式交换；PDF/A标准应用于电子文档的长期归档，基本上就是屏蔽了一些不适合的功能，如Javascript，音频、视频等等。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>在PDF转换过程中，将对要处理的文件对照指定标准进行检查。如果PDF不符合选定的ISO标准，系统会提示您取消转换或创建不符合标准的文件。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>在印刷出版工作流程中广泛使用的标准有以下几种PDF/X格式：PDF/X-1a、PDF/X-3和PDF/X-4(2008)。在PDF归档中广泛使用的标准为PDF/A-1a和PDF/A-1b（要求较低）。<br/>
+						<br/>
+						<span class="class___tab">&#9;</span>PDF/X，与PDF/A一样，是PDF的一个子集。PDF/X的目的在于为设计员、绘图员、工程师和图像艺术家提供一种可为任何服务提供者正确打印的电子文件格式。PDF/X使保持完全一致性成为可能，即使文件被人们在多处位置，用不同的机器处理，也一样。这种格式对大多数网络公司的打印就绪文件传输很理想；这里，打印就绪信息的输送者和接收者并无很强的互相关联。除了为打印任务提供坚实的传送格式之外，PDF/X还具备其他好处，包括有一个文件查看器，更佳的压缩效果（文件大小更小），支持专色印刷色彩这种识别打印条件（比如哪个文件已就绪）的技术手段，以及更多。不过，也与PDF/A一样，PDF/X的好处也伴随着一些妥协。比如透明、加密和JBIG2压缩等功能在DF/X中就是被禁止的。<br/>
+						<br/>
+						<span class="class___tab">&#9;</span>目前，PDF/E的唯一版本是PDF/E-1。如果您想要了解一下PDF/X、PDF/E和PDF/A的详细信息，可以访问ISO和AIIM网站。<br/>
+						<br/>
+						<span class="class___tab">&#9;</span>PDF/VT<br/>
+						<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>PDF/VT特别适用于可变数据印刷的作业交付。名称中的”VT”指的是”可变数据与票据”(Variable&nbsp;and&nbsp;Transactional)。目的是解决所有可变数据印刷在直邮、电话账单和信用卡账单等领域个性化的特殊要求。<br/>
+					</div>
+					<span class="class___tab">&#9;</span><a target="_blank" href="https://blog.csdn.net/pdfMaker/article/details/573990">一个简单PDF文件的结构分析_pdfMaker的专栏-CSDN博客</a>
+					<div class="class___code class___copy_other_people_content">
+						<span class="class___tab">&#9;</span>Adobe的PDF参考告诉我们一个PDF文件可以通过下面4个方面来理解：<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>1.对象,&nbsp;一个PDF文档是由一组基本数据类型组成的数据结构。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>2.文件（物理结构）,&nbsp;决定对象是如何存放在一个PDF文件中的，&nbsp;它们是如何被访问的，如何被更新的。这个结构是独立于对象的语义的。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>3.文档结构,&nbsp;说明一些基本的对象类型是如何来表现PDF文档的成分的：例如页，图片，字体，批注等。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>4.内容流，一个PDF文件内容流包含一系列的指令，描述页面的外观或其他图形实体的外观和文件内容。<br/>
+						<span class="class___tab">&#9;</span>1．PDF格式和HTML,XML格式：<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>一个PDF文档从根本上来说是一个8字节序列。&nbsp;其实PDF格式和我们已经熟知的HTML，XML等结构化的文件格式一样，包含有关键字，分隔符，数据等等。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>不同的是PDF文件是按照二进制流的方式保存的，而html文件则是可读的文本方式保存的，你可以用文本编辑器分别打开一个html文件和PDF文件比较一下就知道了。XML文件一般只包含数据本身，并没有把如何显示的信息放在其中，因此要显示一个XML文件还需要一个Schema文件才能显示，否则看到的将是所有的字节流，包括所有的标志；HTML包含了数据的同时也包含了一些关于如何显示的信息，但是HTML是按照是不经过压缩的文本存放的，是可读的，你打开一个HTML文件就能知道所有将显示在浏览器里的文字。&nbsp;另外就是HTML不能包含二进制流，它对图像文件的引用都是通过引用外部文件的方式来实现的。<br/>
+						<span class="class___tab">&#9;</span>2．PDF规范的发展<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>PDF规范从1993年到现在，已经有过7个版本，六次版本升级，从最初的pdf1.0版本到现在的PDF1.6,&nbsp;每次的版本升级都会加入一些新的特性，PDF参考说明书也是从最初的100多页到现在的1000多页，但是PDF文件格式的主要特性还是没有改变，可以这么理解，PDF1.6是PDF1.0的扩展集，学习了PDF1.0以后也能基本上理解PDF1.6的内容，&nbsp;而PDF1.0规范是相对简单的，因此说我选择一个符合PDF1.0规范的最简单的一个PDF文件来进行分析。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>PDF规范的6次升级：<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>1.1&nbsp;1995&nbsp;加入了文档加密（40字节），线索树，名字树，链接，设备独立色彩资源。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>1.2&nbsp;1996&nbsp;表单,&nbsp;半色调屏幕，和其他的一些高级色彩特性,&nbsp;对中文，日文和韩文的支持<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>1.3&nbsp;2000&nbsp;数字签名,&nbsp;逻辑结构，&nbsp;JavaScript,&nbsp;嵌入式文件，Masked&nbsp;Images,&nbsp;平滑阴影,&nbsp;支持&nbsp;CID字体的附加色彩。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>1.4&nbsp;2001&nbsp;文件加密&nbsp;(128&nbsp;字节),&nbsp;标签式&nbsp;PDF,&nbsp;访问控制，透明，元数据流<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>1.5&nbsp;2003&nbsp;文档加密&nbsp;(公钥),&nbsp;JPEG&nbsp;2000&nbsp;压缩,&nbsp;可选的内容组，附加的注解类型<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>1.6&nbsp;2005&nbsp;文档加密&nbsp;(AES),增加最大文件支持，加入3D支持，额外的注解类型<br/>
+						<span class="class___tab">&#9;</span>3．PDF文件的基本组成：<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>一个PDF文件从大的方面来说可以分4个部分：<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>文件头，指明了该文件所遵从的PDF规范的版本号，它出现在PDF文件的第一行。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>文件体，PDF文件的主要部分，由一系列对象组成。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>交叉引用表，为了能对间接对象进行随机存取而设立的一个间接对象的地址索引表。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>文件尾，声明了交叉引用表的地址，即指明了文件体的根对象（Catalog），从而能够找到PDF文件中各个对象体的位置，达到随机访问。另外还保存了PDF文件的加密等安全信息（以后详细讨论）。<span class="class___tab">&#9;</span><br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>如下图：<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><img src="./refs/a_simple_PDF_file_formation_analysis/imgs/01.jpg"/><br/>
+						<span class="class___tab">&#9;</span>4．PDF文档的逻辑结构<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>作为一种结构化的文件格式，一个PDF文档是由一些称为“对象”的模块组成的。并且每个对象都有数字标号，这样的话可以这些对象就可以被其他的对象所引用。这些对象不需要按照顺序出现在PDF文档里面，出现的顺序可以是任意的，比如一个PDF文件有3页，第3页可以出现在第1页以前，对象按照顺序出现唯一的好处就是能够增加文件的可读性，如果你不会用文本编辑器来阅读PDF结构，那么大可不必关心该顺序。正是因为页与页之间的不相关性，就能够对PDF文件的页面进行随机的访问。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>文件尾（Trail），说明根对象的对象号，并且说明交叉引用表的位置，通过对交叉引用表的查询可以找到目录对象(Catalog)。这个目录对象是该PDF文档的根对象，包含PDF文档的大纲(outline)和页面组对象（pages）引用。大纲对象是指PDF文件的书签树；页面组对象（pages）包含该文件的页面数，各个页面对象(page)的对象号。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>下图是PDF文档的层次关系：<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><img src="./refs/a_simple_PDF_file_formation_analysis/imgs/02.jpg"/><br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>页面（page）对象作为PDF中最重要的对象，包含如何显示该页面的信息，例如使用的字体，包含的内容（文字，图片等），页面的大小。里面的信息可以直接给出，当然里面的子项更多的是对其他对象的引用，真正的信息存放在其他对象里面。页面中包含的信息是包含在一个称为流（stream）的对象里，这个流的长度（字节数）必须直接给出或指向另外一个对象（包含一个整数值，表明这个流的长度）。如下图：<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><img src="./refs/a_simple_PDF_file_formation_analysis/imgs/03.jpg"/><br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>5．&nbsp;PDF的基本语法：<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>文件的第一行是文件头，指明了该文件所遵从的PDF规范的版本号，它出现在PDF文件的第一行。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>一个对象的第一行一般有两个数字和关键字“obj”。例如：<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>3&nbsp;0&nbsp;obj<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>&lt;&lt;<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>/Type&nbsp;/Pages<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>/Count&nbsp;1<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>/Kids&nbsp;[4&nbsp;0&nbsp;R]<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>&gt;&gt;<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>endobj<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>第一个数字称为对象号，来唯一标识一个对象的，第二个是产生号，是用来表明它在被创建后的第几次修改，所有新创建的PDF文件的对象号应该都是0，即第一次被创建以后没有被修改过。上面的例子就说明该对象的对象号是3，而且创建后没有被修改过。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>对象的内容应该是包含在&lt;&lt;&nbsp;和&gt;&gt;之间的，最后以关键字endobj结束.<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>6．文件Hello&nbsp;World的文件分析：<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>6．1．文件的具体分析<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>%PDF-1.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>文件头，说明符合PDF1.0规范<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>1&nbsp;0&nbsp;obj<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>&lt;&lt;<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>/Type&nbsp;/Catalog<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>/Pages&nbsp;3&nbsp;0&nbsp;R<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>/Outlines&nbsp;2&nbsp;0&nbsp;R<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>&gt;&gt;<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>endobj<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>Catalog对象（根对象）<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>/Type&nbsp;/Catalog说明该对象的类型为/Catalog，/Pages&nbsp;3&nbsp;0&nbsp;R，这里/Pages指的是这个根对象包含的/Pages的目标是对象号为3的对象，3&nbsp;0&nbsp;R的意思是对对象3的引用。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>2&nbsp;0&nbsp;obj<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>&lt;&lt;<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>/Type&nbsp;/Outlines<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>/Count&nbsp;0<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>&gt;&gt;<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>endobj<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>outline对象（此处它的计数为0，说明没有书签）<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>3&nbsp;0&nbsp;obj<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>&lt;&lt;<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>/Type&nbsp;/Pages<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>/Count&nbsp;1<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>/Kids&nbsp;[4&nbsp;0&nbsp;R]<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>&gt;&gt;<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>endobj<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>pages对象（页面组对象），/Type&nbsp;/Pages&nbsp;说明自身的属性，对象的类型为页码，/Count&nbsp;1说明页码数量为1，/Kids&nbsp;[4&nbsp;0&nbsp;R]说明它的孩子、页的对象号为4,如果有多个页面，就有多个页面对象的引用，例如/Kids&nbsp;[4&nbsp;0&nbsp;R&nbsp;10&nbsp;0&nbsp;R],&nbsp;就说明该PDF的第一页的对象号是4,第二页的对象号是10。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>4&nbsp;0&nbsp;obj<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>&lt;&lt;<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>/Type&nbsp;/Page<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>/Parent&nbsp;3&nbsp;0&nbsp;R<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>/Resources&nbsp;&lt;&lt;&nbsp;/Font&nbsp;&lt;&lt;&nbsp;/F1&nbsp;7&nbsp;0&nbsp;R&nbsp;&gt;&gt;&nbsp;/ProcSet&nbsp;6&nbsp;0&nbsp;R&nbsp;&gt;&gt;<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>/MediaBox&nbsp;[0&nbsp;0&nbsp;612&nbsp;792]<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>/Contents&nbsp;5&nbsp;0&nbsp;R<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>&gt;&gt;<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>endobj<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>页对象，/Parent&nbsp;3&nbsp;0&nbsp;R说明其父对象的对象号为3，及Pages对象，/Resources&nbsp;&lt;&lt;&nbsp;/Font&nbsp;&lt;&lt;&nbsp;/F1&nbsp;7&nbsp;0&nbsp;R&nbsp;&gt;&gt;&nbsp;/ProcSet&nbsp;6&nbsp;0&nbsp;R&nbsp;&gt;&gt;说明该页所要包含的资源，包括字体和内容的类型，/MediaBox&nbsp;[0&nbsp;0&nbsp;612&nbsp;792]说明页面的显示大小（以象素为单位），/Contents&nbsp;5&nbsp;0&nbsp;R说明页面内容对象的对象号为5。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>5&nbsp;0&nbsp;obj<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>&lt;&lt;&nbsp;/Length&nbsp;44&nbsp;&gt;&gt;<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>stream<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>BT<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>/F1&nbsp;24&nbsp;Tf<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>100&nbsp;100&nbsp;Td&nbsp;(Hello&nbsp;World)&nbsp;Tj<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>ET<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>endstream<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>endobj<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>&lt;&lt;&nbsp;/Length&nbsp;44&nbsp;&gt;&gt;说明stream对象为字节数，从BT开始，ET结束，包括中间的行结束符。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>Stream说明一个流对象的开始。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>BT说明一个文字对象的开始。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>/F1&nbsp;24&nbsp;Tf，Tf说明True&nbsp;font对象，字体明为F1,&nbsp;大小为24个象素。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>100&nbsp;150&nbsp;Td&nbsp;(Hello&nbsp;World)&nbsp;Tj，100&nbsp;100&nbsp;说明这一行文字放置的位置，对于Td,&nbsp;我们可以这样理解，我们的当前X,Y坐标分别加上100和150就是文本的位置，因为在该例子中只有一个对象，那么它的位置就是(100,150),&nbsp;如果下个对象位置信息为100,&nbsp;50&nbsp;Td,&nbsp;那么它的位置应该就是（100+100,&nbsp;150+50）也就是（200，200）。（Hello&nbsp;World）&nbsp;Tj说明文本的内容，当然，如果这里是文本的内容写成16进制，则用&lt;&gt;包含。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>ET说明文字对象的结束标志。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>Endstream为流对象的结束标志<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>6&nbsp;0&nbsp;obj<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>[/PDF&nbsp;/Text]<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>Endobj<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>[/PDF&nbsp;/Text]说明PDF的内容类型仅仅为文本，如果有图片则为[/PDF&nbsp;/Image]<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>7&nbsp;0&nbsp;obj<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>&lt;&lt;<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>/Type&nbsp;/Font<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>/Subtype&nbsp;/Type1<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>/Name&nbsp;/F1<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>/BaseFont&nbsp;/Helvetica<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>&gt;&gt;<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>endobj<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>字体对象，不再多作解释。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>所有的对象之后是下面的交叉引用表：<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>xref<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>0&nbsp;8<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>0000000000&nbsp;65535&nbsp;f<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>0000000009&nbsp;00000&nbsp;n<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>0000000074&nbsp;00000&nbsp;n<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>0000000120&nbsp;00000&nbsp;n<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>0000000179&nbsp;00000&nbsp;n<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>0000000322&nbsp;00000&nbsp;n<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>0000000415&nbsp;00000&nbsp;n<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>0000000445&nbsp;00000&nbsp;n<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>xref说明一个交叉引用表的开始，交叉引用表的第一行0&nbsp;8&nbsp;说明下面各行所描述的对象号是从0开始，并且有8个对象。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>0000000000&nbsp;65535&nbsp;f，一般每个PDF文件都是以这一行开始交叉应用表的，说明对象0的起始地址为0000000000，产生号（generation&nbsp;number）为65535，也是最大产生号，不可以再进行更改，而且最后对象的表示是f,&nbsp;表明该对象为free,&nbsp;这里，大家可以看到，其实这个对象可以看作是文件头。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>0000000009&nbsp;00000&nbsp;n就是表示对象1，也就是catalog对象了，0000000009是其偏移地址，00000为5位产生号（最大为65535），0表明该对象未被修改过,&nbsp;&nbsp;n表示该对象在使用，区别与自由对象，可以更改。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>下面的几行相信大家就可以告诉我含义了。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>Trailer<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>&lt;&lt;<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>/Size&nbsp;8<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>/Root&nbsp;1&nbsp;0&nbsp;R<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>&gt;&gt;<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>startxref<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>553<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>%%EOF<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>Trailer说明文件尾trailer对象的开始。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>/Size&nbsp;8说明该PDF文件的对象数目。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>/Root&nbsp;1&nbsp;0&nbsp;R说明根对象的对象号为1。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>Startxref&nbsp;553说明交叉引用表的偏移地址，从而可以找到PDF文档中所有的对象的相对地址，进而访问对象。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>%%EOF为文件结束标志。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>6．2．PDF解析过程<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>回顾上面的详细解释，我们可以将这个简单的PDF解析过程简化为如下图例：<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><img src="./refs/a_simple_PDF_file_formation_analysis/imgs/04.jpg"/><br/>
+					</div>
+					<span class="class___tab">&#9;</span><a target="_blank" href="https://blog.csdn.net/lyc44813418/article/details/90577489">PDF格式学习_老肥码码码-CSDN博客</a>
+					<div class="class___code class___copy_other_people_content">
+						<span class="class___tab">&#9;</span>目录<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>PDF格式学习<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>PDF简介<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>PDF的优点<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>PDF格式<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>对象<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>物理文件结构<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>文件头<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>对象集合<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>交叉引用表<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>文件尾<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>逻辑文件结构<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>catalog根节点<br/>
+						<span class="class___tab">&#9;</span>PDF格式学习<br/>
+						<span class="class___tab">&#9;</span>PDF简介<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>PDF是Portable&nbsp;Document&nbsp;Format&nbsp;的缩写，可翻译为“便携文件格式”，由Adobe&nbsp;System&nbsp;Incorporated&nbsp;公司在1992年发明。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>PDF文件是一种编程形式的文档格式，它所有显示的内容，都是通过相应的操作符进行绘制的。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>PDF基本显示单元包括：文字，图片，矢量图，图片<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>PDF扩展单元包括：水印，电子署名，注释，表单，多媒体，3D<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>PDF动作单元：书签，超链接（拥有动作的单元有很多个，包括电子署名，多媒体等等）<br/>
+						<br/>
+						<span class="class___tab">&#9;</span>PDF的优点<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>一致性：<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>在所有可以打开PDF的机器上，展示的效果是完全一致，不会出现段落错乱、文字乱码这些排版问题。尤其是文档中，本身可以嵌入字体，避免了客户端没有对应字体，而导致文字显示不一致的问题。所以，在印刷行业，绝大多数用的都是PDF格式。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>不易修改：<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>用过PDF文件的人，都会知道，对已经保存之后的PDF文件，想要进行重新排版，基本上就不可能的，这就保证了从资料源发往外界的资料，不容易被篡改。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>安全性：<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>PDF文档可以进行加密，包括以下几种加密形式：文档打开密码，文档权限密码，文档证书密码，加密的方法包括：RC4，AES，通过加密这种形式，可以达到资料防扩散等目的。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>不失真：<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>PDF文件中，使用了矢量图，在文件浏览时，无论放大多少倍，都不会导致使用矢量图绘制的文字，图案的失真。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>支持多种压缩方式：<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>为了减少PDF文件的size，PDF格式支持各种压缩方式：&nbsp;asciihex，ascii85，lzw，runlength，ccitt，jbig2，jpeg(DCT)，jpeg2000(jpx)<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>支持多种印刷标准：<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>支持PDF-A，PDF-X<br/>
+						<br/>
+						<span class="class___tab">&#9;</span>PDF格式<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>根据PDF官方指南，理解PDF格式可以从四个方面下手——Objects（对象）、File&nbsp;structure（物理文件结构）、Document&nbsp;structure（逻辑文件结构）、Content&nbsp;streams（内容流）。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>对象<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>物理文件结构<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>整体上分为文件头（Header）、对象集合（Body）、交叉引用表（Xref&nbsp;table）、文件尾（Trailer）四个部分，结构如图。修改过的PDF结构会有部分变化。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>未经修改<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><img src="./refs/PDF_format_learn/imgs/01.png"/><br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>经修改<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><img src="./refs/PDF_format_learn/imgs/02.png"/><br/>
+						<br/>
+						<span class="class___tab">&#9;</span>文件头<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>%PDF-1.7<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>这是个固定格式，表示这个PDF文件遵循的PDF规范版本，解析PDF的时候尽量支持高版本的规范，以保证支持大多数工具生成的PDF文件。1.7版本支持1.0-1.7之间的所有版本。<br/>
+						<br/>
+						<span class="class___tab">&#9;</span>对象集合<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>这是一个PDF文件最重要的部分，文件中用到的所有对象,包括文本、图象、音乐、视频、字体、超连接、加密信息、文档结构信息等等,都在这里定义。格式如下:<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>文件头是PDF文件的第一行,格式如下:<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>2&nbsp;0&nbsp;obj<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>...<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>end&nbsp;obj<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>一个对象的定义包含4个部分：前面的2是对象序号，其用来唯一标记一个对象；0是生成号，按照PDF规范，如果一个PDF文件被修改，那这个数字是累加的，它和对象序号一起标记是原始对象还是修改后的对象，但是实际开发中，很少有用这种方式修改PDF的，都是重新编排对象号；obj和endobj是对象的定义范围，可以抽象的理解为这就是一个左括号和右括号；省略号部分是PDF规定的任意合法对象。<br/>
+						<span class="class___tab">&#9;</span>可以通过R关键字来引用任何一个对象，比如要引用上面的对象，可以使用2&nbsp;0&nbsp;R，需要主意的是，R关键字不仅可以引用一个已经定义的对象，还可以引用一个并不存在的对象，而且效果就和引用了一个空对象一样。<br/>
+						<span class="class___tab">&#9;</span>对象主要有下面几种<br/>
+						<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>boolean<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>用关键字true或false表示，可以是array对象的一个元素,或dictionary对象的一个条目。也可以用在PostScript计算函数里面，做为if或if&nbsp;esle的一个条件。<br/>
+						<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>numeric<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>包括整形和实型，不支持非十进制数字，不支持指数形式的数字。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>例:<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>1)整数&nbsp;123&nbsp;4567&nbsp;+111&nbsp;-2<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>范围:正2的31次方-1到负的2的31次方<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>2)实数&nbsp;12.3&nbsp;0.8&nbsp;+6.3&nbsp;-4.01&nbsp;-3.&nbsp;+.03<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>范围:±3.403&nbsp;×10的38次方&nbsp;±1.175&nbsp;×&nbsp;10的-38次方<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>注意:如果整数超过表示范围将转化成实数,如果实数超过范围就会出错<br/>
+						<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>string<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>由一系列0-255之间的字节组成，一个string总长度不能超过65535.string有以下两种方式：<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>十六进制字串<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>由&lt;&gt;包含起来的一个16进制串，两位表示一个字符,不足两位用0补齐。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>例:&nbsp;&lt;Aabb&gt;&nbsp;表示AA和BB两个字符&nbsp;&lt;AAB&gt;&nbsp;表示AA和B0两个字符<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>直接字串<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>由()包含起来的一个字串,中间可以使用转义符"/"。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>例：<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>(abc)&nbsp;表示abc<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>(a//)&nbsp;表示a/<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>转义符的定义如下：<br/>
+						<table class="class___PDF_format_learn__table">
+							<thead>
+								<tr>
+									<th>转义字符</th>
+									<th>含义</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>/n</td>
+									<td>换行</td>
+								</tr>
+								<tr>
+									<td>/r</td>
+									<td>回车</td>
+								</tr>
+								<tr>
+									<td>/t</td>
+									<td>水平制表符</td>
+								</tr>
+								<tr>
+									<td>/b</td>
+									<td>退格</td>
+								</tr>
+								<tr>
+									<td>/f</td>
+									<td>换页（Form feed (FF)）</td>
+								</tr>
+								<tr>
+									<td>/(</td>
+									<td>左括号</td>
+								</tr>
+								<tr>
+									<td>/)</td>
+									<td>右括号</td>
+								</tr>
+								<tr>
+									<td>//</td>
+									<td>反斜杠</td>
+								</tr>
+								<tr>
+									<td>/ddd</td>
+									<td>八进制形式的字符</td>
+								</tr>
+							</tbody>
+						</table>
+						<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>name<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>由一个前导/和后面一系列字符组成，最大长度为127。和string不同的是，name是不可分割的并且是唯一的，不可分割就是说一个name对象就是一个原子，比如/name，不能说n就是这个name的一个元素；唯一就是指两个相同的name一定代表同一个对象。从pdf1.2开始，除了ascii的0，别的都可以用一个#加两个十六进制的数字表示。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>例:<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>/name&nbsp;表示name<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>/name#20is&nbsp;表示name&nbsp;is<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>/name#200&nbsp;表示name&nbsp;0<br/>
+						<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>array<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>用[]包含的一组对象，可以是任何pdf对象(包括array)。虽然pdf只支持一维array，但可以通过array的嵌套实现任意维数的array(但是一个array的元素不能超过8191)。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>例：[549&nbsp;3.14&nbsp;false&nbsp;(Ralph)&nbsp;/SomeName]<br/>
+						<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>Dictionary<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>用"&lt;&lt;“和”&gt;&gt;"包含的若干组条目，每组条目都由key和value组成，其中key必须是name对象，并且一个dictionary内的key是唯一的；value可以是任何pdf的合法对象(包括dictionary对象)。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>例：<br/>
+						<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>&lt;&lt;&nbsp;&nbsp;/IntegerItem&nbsp;&nbsp;&nbsp;12<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>/StringItem&nbsp;&nbsp;&nbsp;(a&nbsp;&nbsp;&nbsp;string)<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>/Subdictionary<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>&lt;&lt;&nbsp;&nbsp;/Item1&nbsp;&nbsp;&nbsp;0.4<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>/Item2&nbsp;&nbsp;&nbsp;true<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>/LastItem&nbsp;&nbsp;&nbsp;(not!)<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>/VeryLastItem&nbsp;&nbsp;&nbsp;(OK)<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>&gt;&gt;<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>&gt;&gt;<br/>
+						<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>stream<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>由一个字典和紧跟其后面的一组关键字stream和endstream以及这组关键字中间包含一系列字节组成。内容和string很相似，但有区别：stream可以分几次读取，分开使用不同的部分，string必须作为一个整体一次全部读取使用；string有长度限制，但stream却没有这个限制。一般较大的数据都用stream表示。需要注意的是，stream必须是间接对象，并且stream的字典必须是直接对象。从1.2规范以后，stream可以以外部文件形式存在，这种情况下，解析PDF的时候stream和endstream之间的内容就被忽略掉。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>例:<br/>
+						<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>dictionary<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>stream<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>…data…<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>endstream<br/>
+						<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>stream字典中常用的字段如下：<br/>
+						<table class="class___PDF_format_learn__table">
+							<thead>
+								<tr>
+									<th>字段名</th>
+									<th>类型</th>
+									<th>值</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Length</td>
+									<td>整形</td>
+									<td>（必须）关键字stream和endstream之间的数据长度，endstream之前可能会有一个多余的EOL标记，这个不计算在数据的长度中。</td>
+								</tr>
+								<tr>
+									<td>Filter</td>
+									<td>名字 或 数组</td>
+									<td>（可选）Stream的编码算法名称（列表）。如果有多个，则数组中的编码算法列表顺序就是数据被编码的顺序。</td>
+								</tr>
+								<tr>
+									<td>DecodeParms</td>
+									<td>字典 或 数组</td>
+									<td>（可选)一个参数字典或由参数字典组成的一个数组，供Filter使用。如果仅有一个Filter并且这个Filter需要参数，除非这个Filter的所有参数都已经给了默认值，否则的话 DecodeParms必须设置给Filter。如果有多个Filter，并且任意一个Filter使用了非默认的参数， DecodeParms 必须是个数组，每个元素对应一个Filter的参数列表（如果某个Filter无需参数或所有参数都有了默认值，就用空对象代替）。 如果没有Filter需要参数，或者所有Filter的参数都有默认值，DecodeParms 就被忽略了。</td>
+								</tr>
+								<tr>
+									<td>F</td>
+									<td>文件标识</td>
+									<td>（可选)保存stream数据的文件。如果有这个字段， stream和endstream就被忽略，FFilter将会代替Filter, FDecodeParms将代替DecodeParms。Length字段还是表示stream和endstream之间数据的长度，但是通常此刻已经没有数据了，长度是0.</td>
+								</tr>
+								<tr>
+									<td>FFilter</td>
+									<td>名字 或 字典</td>
+									<td>(可选)和filter类似，针对外部文件。</td>
+								</tr>
+								<tr>
+									<td>FDecodeParms</td>
+									<td>字典 或 数组</td>
+									<td>(可选)和DecodeParams类似，针对外部文件。</td>
+								</tr>
+							</tbody>
+						</table>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>Stream的编码算法名称（列表）。如果有多个，则数组中的编码算法列表顺序就是数据被编码的顺序。且需要被编码。编码算法主要如下：<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><img src="./refs/PDF_format_learn/imgs/03.png"/><br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>编码可视化主要显示为乱码，所以提供了隐藏信息的机会,如下图的steam内容为乱码。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><img src="./refs/PDF_format_learn/imgs/04.png"/><br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>NULL<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>用null表示，代表空。如果一个key的值为null，则这个key可以被忽略；如果引用一个不存在的object则等价于引用一个空对象。<br/>
+						<br/>
+						<span class="class___tab">&#9;</span>交叉引用表<br/>
+						<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>交叉引用表是PDf文件内部一种特殊的文件组织方式，可以很方便的根据对象号随机访问一个对象。其格式如下:<br/>
+						<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>xref<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>0&nbsp;1<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>0000000000&nbsp;&nbsp;&nbsp;65535&nbsp;&nbsp;&nbsp;f<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>4&nbsp;1<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>0000000009&nbsp;&nbsp;&nbsp;00000&nbsp;&nbsp;&nbsp;n<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>8&nbsp;3<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>0000000074&nbsp;&nbsp;&nbsp;00000&nbsp;&nbsp;&nbsp;n<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>0000000120&nbsp;&nbsp;&nbsp;00000&nbsp;&nbsp;&nbsp;n<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>0000000179&nbsp;&nbsp;&nbsp;00000&nbsp;&nbsp;&nbsp;n<br/>
+						<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>其中,xref是开始标志,表示以下为一个交叉引用表的内容;每个交叉引用表又可以分为若干个子段，每个子段的第一行是两个数字，第一个是对象起始号，后面是连续的对象个数，接着每行是这个子段的每个对象的具体信息——每行的前10个数字代表这个这个对象相对文件头的偏移地址,后面的5位数字是生成号（用于标记PDF的更新信息，和对象的生成号作用类似），最后一位f或n表示对象是否被使用(n表示使用,f表示被删除或没有用)。上面这个交叉引用表一共有3个子段，分别有1个，1个，3个对象，第一个子段的对象不可用，其余子段对象可用。<br/>
+						<br/>
+						<span class="class___tab">&#9;</span>文件尾<br/>
+						<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>通过trailer可以快速的找到交叉引用表的位置，进而可以精确定位每一个对象；还可以通过它本身的字典还可以获取文件的一些全局信息（作者，关键字，标题等），加密信息，等等。具体形式如下:<br/>
+						<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>trailer<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>&lt;&lt;<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>key1&nbsp;&nbsp;&nbsp;value1<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>key2&nbsp;&nbsp;&nbsp;value2<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>key3&nbsp;&nbsp;&nbsp;value3<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>…<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>&gt;&gt;<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>startxref<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>553<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>%%EOF<br/>
+						<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>trailer后面紧跟一个字典，包含若干键-值对。具体含义如下：<br/>
+						<table class="class___PDF_format_learn__table">
+							<thead>
+								<tr>
+								<th>键</th>
+								<th>值类型</th>
+								<th>值说明</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Size</td>
+									<td>整形数字</td>
+									<td>所有间接对象的个数。一个PDF文件，如果被更新过，则会有多个对象集合、交叉引用表、trailer，最后一个trailer的这个字段记录了之前所有对象的个数。这个值必须是直接对象。</td>
+								</tr>
+								<tr>
+									<td>Prev</td>
+									<td>整形数字</td>
+									<td>当文件有多个对象集合、交叉引用表和trailer时，才会有这个键，它表示前一个相对于文件头的偏移位置。这个值必须是直接对象。</td>
+								</tr>
+								<tr>
+									<td>Root</td>
+									<td>字典</td>
+									<td>Catalog字典（文件的逻辑入口点）的对象号。必须是间接对象。</td>
+								</tr>
+								<tr>
+									<td>Encrypt</td>
+									<td>字典</td>
+									<td>文档被保护时，会有这个字段，加密字典的对象号。</td>
+								</tr>
+								<tr>
+									<td>Info</td>
+									<td>字典</td>
+									<td>存放文档信息的字典，必须是间接对象。</td>
+								</tr>
+								<tr>
+									<td>ID</td>
+									<td>数组</td>
+									<td>文件的ID</td>
+								</tr>
+							</tbody>
+						</table>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>上面代码中的startxref：后面的数字表示最后一个交叉引用表相对于文件起始位置的偏移量<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>%%EOF：文件结束符<br/>
+						<br/>
+						<span class="class___tab">&#9;</span>逻辑文件结构<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><img src="./refs/PDF_format_learn/imgs/05.png"/><br/>
+						<span class="class___tab">&#9;</span>catalog根节点<br/>
+						<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>catalog是整个PDF逻辑结构的根节点，这个可以通过trailer的Root字段定位，虽然简单，但是相当重要，因为这里是PDF文件物理结构和逻辑结构的连接点。Catalog字典包含的信息非常多，这里仅就最主要的几个字段做个说明。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>Pages字段<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>这是个必须字段，是PDF里面所有页面的描述集合。Pages字段本身是个字典，它里面又包含了一下几个主要字段：<br/>
+						<table class="class___PDF_format_learn__table">
+							<thead>
+								<tr>
+									<th>字段</th>
+									<th>类型</th>
+									<th>值</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Type</td>
+									<td>name</td>
+									<td>(必须)只能为Pages 。</td>
+								</tr>
+								<tr>
+									<td>Parent</td>
+									<td>dictionary</td>
+									<td>(如果不是catalog里面指定的跟节点，则必须有，并且必须是间接对象) 当前节点的直接父节点。</td>
+								</tr>
+								<tr>
+									<td>Kids</td>
+									<td>array</td>
+									<td>(必须)一个间接对象组成的数组，节点可能是page或page tree。</td>
+								</tr>
+								<tr>
+									<td>Count</td>
+									<td>integer</td>
+									<td>(必须) page tree里面所包含叶子节点（page 对象）的个数。</td>
+								</tr>
+							</tbody>
+						</table>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>从以上字段可以看出，Pages最主要的功能就是组织所有的page对象。Page对象描述了一个PDF页面的属性、资源等信息。Page对象是一个字典，它主要包含一下几个重要的属性：
+						<table class="class___PDF_format_learn__table">
+							<thead>
+								<tr>
+									<th>字段</th>
+									<th>类型</th>
+									<th>值</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Type</td>
+									<td>name</td>
+									<td>(必须)必须是Page。</td>
+								</tr>
+								<tr>
+									<td>Parent</td>
+									<td>dictionary</td>
+									<td>(必须；并且只能是间接对象)当前page节点的直接父节点page tree 。</td>
+								</tr>
+								<tr>
+									<td>LastModified</td>
+									<td>date</td>
+									<td>(如果存在PieceInfo字段，就必须有，否则可选)记录当前页面被最后一次修改的日期和时间。</td>
+								</tr>
+								<tr>
+									<td>Resources</td>
+									<td>dictionary</td>
+									<td>(必须; 可继承)记录了当前page用到的所有资源。如果当前页不用任何资源，则这是个空字典。忽略所有字段则表示继承父节点的资源。</td>
+								</tr>
+								<tr>
+									<td>MediaBox</td>
+									<td>rectangle</td>
+									<td>(必须; 可继承)定义了要显示或打印页面的物理媒介的区域（default user space units）</td>
+								</tr>
+								<tr>
+									<td>CropBox</td>
+									<td>rectangle</td>
+									<td>(可选; 可继承)定义了一个可视区域，当前页被显示或打印的时候，它的内容会被这个区域裁剪。默认值就是 MediaBox。</td>
+								</tr>
+								<tr>
+									<td>BleedBox</td>
+									<td>rectangle</td>
+									<td>(可选) 定义了一个区域，当输出设备是个生产环境（ production environment）的时候，页面显示的内容会被裁剪。默认值是 CropBox.</td>
+								</tr>
+								<tr>
+									<td>Contents</td>
+									<td>stream or array</td>
+									<td>(可选) 描述页面内容的流。如果这个字段缺省，则页面上什么也不会显示。这个值可以是一个流，也可以是由几个流组成的一个数组。如果是数组，实际效果相当于所有的流是按顺序连在一起的一个流，这就允许PDF生成的时候可以随时插入图片或其他资源。流之间的分割只是词汇上的一个分割，并不是逻辑上或者组织形式的切割。</td>
+								</tr>
+								<tr>
+									<td>Rotate</td>
+									<td>integer</td>
+									<td>(可选; 可继承) 顺时钟旋转的角度数，这个必须是90的整数倍，默认是0。</td>
+								</tr>
+								<tr>
+									<td>Thumb</td>
+									<td>stream</td>
+									<td>(可选)定义当前页的缩略图。</td>
+								</tr>
+								<tr>
+									<td>Annots</td>
+									<td>array</td>
+									<td>(可选) 和当前页面关联的注释。</td>
+								</tr>
+								<tr>
+									<td>Metadata</td>
+									<td>stream</td>
+									<td>(可选) 当前页包含的元数据。</td>
+								</tr>
+							</tbody>
+						</table>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>一个简单例子：<br/>
+						<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>3&nbsp;0&nbsp;obj<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>&lt;&lt;&nbsp;/Type&nbsp;/Page<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>/Parent&nbsp;4&nbsp;0&nbsp;R<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>/MediaBox&nbsp;[&nbsp;0&nbsp;0&nbsp;612&nbsp;792&nbsp;]<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>/Resources&nbsp;&lt;&lt;/Font&lt;&lt;<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>/F3&nbsp;7&nbsp;0&nbsp;R&nbsp;/F5&nbsp;9&nbsp;0&nbsp;R&nbsp;/F7&nbsp;11&nbsp;0&nbsp;R<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>&gt;&gt;<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>/ProcSet&nbsp;[&nbsp;/PDF&nbsp;]<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>&gt;&gt;<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>/Contents&nbsp;12&nbsp;0&nbsp;R<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>/Thumb&nbsp;14&nbsp;0&nbsp;R<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>/Annots&nbsp;[&nbsp;23&nbsp;0&nbsp;R&nbsp;24&nbsp;0&nbsp;R]<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>&nbsp;&gt;&gt;&nbsp;<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>endobj<br/>
+						<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>Outlines字段<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>Outline是PDF里面为了方便用户从PDF的一部分跳转到另外一部分而设计的，有时候也叫书签（Bookmark），它是一个树状结构，可以直观的把PDF文件结构展现给用户。用户可以通过鼠标点击来打开或者关闭某个outline项来实现交互，当打开一个outline时，用户可以看到它的所有子节点，关闭一个outline的时候，这个outline的所有子节点会自动隐藏。并且，在点击的时候，阅读器会自动跳转到outline对应的页面位置。Outlines包含以下几个字段：<br/>
+						<table class="class___PDF_format_learn__table">
+							<thead>
+								<tr>
+									<th>字段</th>
+									<th>类型</th>
+									<th>值</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Type</td>
+									<td>name</td>
+									<td>(可选)如果这个字段有值，则必须是Outlines。</td>
+								</tr>
+								<tr>
+									<td>First</td>
+									<td>dictionary</td>
+									<td>(必须;必须是间接对象) 第一个顶层Outline item。</td>
+								</tr>
+								<tr>
+									<td>Last</td>
+									<td>dictionary</td>
+									<td>(必须;必须是间接对象)最后一个顶层outline item。</td>
+								</tr>
+								<tr>
+									<td>Count</td>
+									<td>integer</td>
+									<td>(必须)outline的所有层次的item的总数。</td>
+								</tr>
+							</tbody>
+						</table>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>Outline是一个管理outline item的顶层对象，我们看到的，其实是outline item，这个里面才包含了文字、行为、目标区域等等。一个outline item主要有一下几个字段：<br/>
+						<table class="class___PDF_format_learn__table">
+							<thead>
+								<tr>
+									<th>字段</th>
+									<th>类型</th>
+									<th>值</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Title</td>
+									<td>text string</td>
+									<td>(必须)当前item要显示的标题。</td>
+								</tr>
+								<tr>
+									<td>Parent</td>
+									<td>dictionary</td>
+									<td>(必须;必须是间接对象) outline层级中，当前item的父对象。如果item本身是顶级item，则父对象就是它本身。</td>
+								</tr>
+								<tr>
+									<td>Prev</td>
+									<td>dictionary</td>
+									<td>(除了每层的第一个item外，其他item必须有这个字段;必须是间接对象)当前层级中，此item的前一个item。</td>
+								</tr>
+								<tr>
+									<td>Next</td>
+									<td>dictionary</td>
+									<td>(除了每层的最后一个item外，其他item必须有这个字段;必须是间接对象)当前层级中，此item的后一个item。</td>
+								</tr>
+								<tr>
+									<td>First</td>
+									<td>dictionary</td>
+									<td>(如果当前item有任何子节点，则这个字段是必须的;必须是间接对象) 当前item的第一个直接子节点。</td>
+								</tr>
+								<tr>
+									<td>Last</td>
+									<td>dictionary</td>
+									<td>(如果当前item有任何子节点，则这个字段是必须的;必须是间接对象) 当前item的最后一个直接子节点。</td>
+								</tr>
+								<tr>
+									<td>Dest</td>
+									<td>name,byte string, or array</td>
+									<td>(可选; 如果A字段存在，则这个不能被会略)当前的outline item被激活的时候，要显示的区域。</td>
+								</tr>
+								<tr>
+									<td>A</td>
+									<td>dictionary</td>
+									<td>(可选; 如果Dest 字段存在，则这个不能被忽略)当前的outline item被激活的时候，要执行的动作。</td>
+								</tr>
+							</tbody>
+						</table>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>URI字段<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>URI（uniform&nbsp;resource&nbsp;identifier)，定义了文档级别的统一资源标识符和相关链接信息。目录和文档中的链接就是通过这个字段来处理的.<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>Metadata字段<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>文档的一些附带信息，用xml表示，符合adobe的xmp规范。这个可以方便程序不用解析整个文件就能获得文件的大致信息。<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>其他<br/>
+						<span class="class___tab">&#9;</span><span class="class___tab">&#9;</span>Catalog字典中，常用的字段一般有以下一些：<br/>
+						<table class="class___PDF_format_learn__table">
+							<thead>
+								<tr>
+									<th>字段</th>
+									<th>类型</th>
+									<th>值</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Type</td>
+									<td>name</td>
+									<td>(必须)必须为Catalog。</td>
+								</tr>
+								<tr>
+									<td>Version</td>
+									<td>name</td>
+									<td>(可选)PDF文件所遵循的版本号（如果比文件头指定的版本号高的话）。如果这个字段缺省或者文件头指定的版本比这里的高，那就以文件头为准。一个PDF生成程序可以通过更新这个字段的值来修改PDF文件版本号。</td>
+								</tr>
+								<tr>
+									<td>Pages</td>
+									<td>dictionary</td>
+									<td>(必须并且必须为间接对象)当前文档的页面集合入口。</td>
+								</tr>
+								<tr>
+									<td>PageLabels</td>
+									<td>number tree</td>
+									<td>(可选) number tree，定义了页面和页面label对应关系。</td>
+								</tr>
+								<tr>
+									<td>Names</td>
+									<td>dictionary</td>
+									<td>(可选)文档的name字典。</td>
+								</tr>
+								<tr>
+									<td>Dests</td>
+									<td>dictionary</td>
+									<td>(可选;必须是间接对象)name和相应目标对应关系字典。</td>
+								</tr>
+								<tr>
+									<td>ViewerPreferences</td>
+									<td>dictionary</td>
+									<td>(可选)阅读参数配置字典，定义了文档被打开时候的行为。如果缺省，则使用阅读器自己的配置。</td>
+								</tr>
+								<tr>
+									<td>PageLayout</td>
+									<td>name</td>
+									<td>(可选) 指定文档被打开的时候页面的布局方式。SinglePageDisplay 单页OneColumnDisplay 单列TwoColumnLeftDisplay 双列，奇数页在左TwoColumnRightDisplay 双列，奇数页在右TwoPageLeft 双页，奇数页在左TwoPageRight 双页，奇数页在右缺省值: SinglePage.</td>
+								</tr>
+								<tr>
+									<td>PageMode</td>
+									<td>name</td>
+									<td>(可选) 当文档被打开时，指定文档怎么显示UseNone 目录和缩略图都不显示UseOutlines 显示目录UseThumbs 显示缩略图FullScreen 全屏模式，没有菜单，任何其他窗口UseOC 显示Optional content group 面板UseAttachments显示附件面板缺省值: UseNone.</td>
+								</tr>
+								<tr>
+									<td>Outlines</td>
+									<td>dictionary</td>
+									<td>(可选；必须为间接对象)文档的目录字典</td>
+								</tr>
+								<tr>
+									<td>Threads</td>
+									<td>array</td>
+									<td>(可选；必须为间接对象)文章线索字典组成的数组。</td>
+								</tr>
+								<tr>
+									<td>OpenAction</td>
+									<td>array or dictionary</td>
+									<td>(可选) 指定一个区域或一个action，在文档打开的时候显示（区域）或者执行（action）。如果缺省，则会用默认缩放率显示第一页的顶部。</td>
+								</tr>
+								<tr>
+									<td>AA</td>
+									<td>dictionary</td>
+									<td>(可选)一个附加的动作字典，在全局范围内定义了响应各种事件的action。</td>
+								</tr>
+								<tr>
+									<td>URI</td>
+									<td>dictionary</td>
+									<td>(可选)一个URI字典包含了文档级别的URI action信息。</td>
+								</tr>
+								<tr>
+									<td>AcroForm</td>
+									<td>dictionary</td>
+									<td>(可选)文档的交互式form (AcroForm)字典。</td>
+								</tr>
+								<tr>
+									<td>Metadata</td>
+									<td>stream</td>
+									<td>(可选;必须是间接对象)文档包含的元数据流。</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<span class="class___tab">&#9;</span><a target="_blank" href="https://lacoucou.blog.csdn.net/article/details/114638913">PDF 文件格式 基本结构_lacoucou的专栏-CSDN博客_pdf文件格式</a>
+					<br/>
+					<span class="class___tab">&#9;</span><a target="_blank" href="https://blog.csdn.net/qq_37611077/article/details/103746591">PDF文件格式：基本结构_haoNote-CSDN博客_pdf 数据格式</a>
+					<br/>
+					<span class="class___tab">&#9;</span><a target="_blank" href="https://blog.csdn.net/pdfMaker/article/details/1039046">PDF加密、解密内幕（一）- (PDF加密字典对象分析)_pdfMaker的专栏-CSDN博客_pdf加密原理</a>
+					<br/>
+					<span class="class___tab">&#9;</span><a target="_blank" href="https://blog.csdn.net/pdfMaker/article/details/1059692">PDF加密、解密内幕（二）- PDF文件口令加密内幕_pdfMaker的专栏-CSDN博客_pdf加密口令</a>
+					<br/>
+					<span class="class___tab">&#9;</span><a target="_blank" href="https://blog.csdn.net/pdfMaker/article/details/1112221">彻底破解加密PDF文件_pdfMaker的专栏-CSDN博客</a>
+					<br/>
+					<span class="class___tab">&#9;</span><a target="_blank" href="https://www.colortell.com/7401.html">PDF/X各种标准规范讲解 | 色彩管理网</a>
+					<div class="class___code class___copy_other_people_content">
+						<span class="class___tab">&#9;</span>PDF/X各种标准规范讲解<br/>
+						<br/>
+						<span class="class___tab">&#9;</span>对于&nbsp;PDF/X&nbsp;标准在数码印前设计和印刷领域的应用，目前有PDF/X-1、PDF/X-2、PDF/X-3、PDF/X-4和PDF/X-5等较多的规范版本，而且对同一标准还存在不同的子标准，比如，PDF/X-1标准，就有由CGATS于1999年制定的PDF/X-1:1999，由ISO于2001年制的PDF/X-1:2001、PDF/X-1a:2001以及后来发布的PDF/X-1a:2003等3个不同的版本；<br/>
+						<br/>
+						<span class="class___tab">&#9;</span>又如同一种PDF/X-4标准，又分别有PDF/X-4、PDF/X-4p&nbsp;2个不同的版本；而同一种PDF/X-5标准，则分别又有PDF/X-5g、PDF/X-5pg及&nbsp;PDF/X-5n&nbsp;3&nbsp;个不同的版本。也正是这种状况，使很多业内人士在日常的设计应用和印刷输出工作中变得迷惑和不知所措，不能正确选择相关标准的版本，造成一些不必要的工作错误，因此，系统地分析解各常用标准的特点，对于正确认识并选用PDF规范标准就显得尤为重要。<br/>
+						<br/>
+						<span class="class___tab">&#9;</span>&nbsp;&nbsp;&nbsp;&nbsp;PDF/X-1:1999&nbsp;与&nbsp;PDF/X-1。它们是由CGATS和ANSI&nbsp;制定的PDF/X标准中的早期版本，由于PDF/X-1:1999不支持专色及双色调图像处理，以及PDF/X-1采用的OPI（Open&nbsp;Press&nbsp;Initiative开放式印前接口）技术的应用变迁，二者都已经被淘汰不用。<br/>
+						<span class="class___tab">&#9;</span>&nbsp;&nbsp;&nbsp;&nbsp;PDF/X-1a&nbsp;。此版本是ISO于2001年在PDF/X-1:1999版本基础上，采用&nbsp;PDF1.3&nbsp;版本修订而来的PDF/X&nbsp;标准，该标准支持&nbsp;CMYK&nbsp;色彩模式、灰度模式和专色模式，禁止使用RGB或Lab色彩模式的图像，同时禁止使用OPI与文件加密技术，并要求所用到的所有字体必须嵌入文件之中。PDF/X-1a:2003版本则是基于PDF1.4修订而来，但是它不支持透明度和JBIG2高倍率压缩技术。<br/>
+						<span class="class___tab">&#9;</span>&nbsp;&nbsp;&nbsp;&nbsp;PDF/X-2。这是&nbsp;2003年由ISO制&nbsp;的基于PDF1.4&nbsp;版本的PDF/X标准，它以PDF/X-1a和PDF/X-3为基础，并与二者兼容，可以像PDF/X-3一样使用CMYK，Lab等多种色彩模式进行数据处理和转换、支持ICC色彩管理技术、支持文件中的透明层效果和OPI外部对象。但不像PDF/X-1a和PDF/X-3标准那样规&nbsp;所用字体必须完全嵌入文件，只需指所用字体即可。<br/>
+						<span class="class___tab">&#9;</span>&nbsp;&nbsp;&nbsp;&nbsp;PDF/X-3&nbsp;。PDF/X-3标准是由ISO发布，具有PDF/X-3:2002和PDF/X-3:2003&nbsp;2个版本，都是兼容PDF/X-1a标准的扩展集，前者基于PDF1.3&nbsp;版本，后者基于PDF1.4版本，但是不支持PDF1.4的透明度和JBIG2&nbsp;压缩技术，该标准同样要求所用到的所有字体必须嵌入文件保存。需要注意，PDF/X-3比PDF/X-1a的应用灵活性大，它不仅可以使用CMYK色彩模式和专色数据，还允许使用RGB色彩模式和与设备无关的颜色数据，比如Lab色彩模式，并可对这些颜色数据实施色彩管理。采用PDF/X-3标准的PDF文件，既可以用于印刷出版输出，也可以采用RGB设备、复合打印等设备输出。但是，这种适合于多种应用设计输出的方式虽增加印前数据文件交流与使用的灵活性，同时，也会增加出错的几率，应用时要特别注意。<br/>
+						<span class="class___tab">&#9;</span>&nbsp;&nbsp;&nbsp;&nbsp;PDF/X-4&nbsp;。PDF/X-4是2007年由ISO发布的基于PDF1.6版本的PDF/X标准，其2008版则是基于PDF1.7&nbsp;版本的PDF/X&nbsp;标准。PDF/X-4的特点是规定所用到的所有字体、图像数据必须嵌入文件内（允许嵌入OpenType字体）、允许使用透明度处理及图层技术、允许使用CMYK、RGB、Lab、灰阶，专色或基于ICC的色彩模式、允许有选择的使用16位的图像数据（可能在某些&nbsp;RIP&nbsp;系统中出现计算错误）、不支持OPI技术和文件加密技术、不容许包含&nbsp;JavaScript&nbsp;代码、音乐、视频或不可打印的说明信息。由于PDF/X-4标准的应用灵活性也较大，同样也会增加出错的几率。需要注意，PDF/X-4与PDF/X-3标准相似，但最大区别是PDF/X-3不支持透明对象和图层技术，且PDF/X-4p采用外联方式输出ICC色彩描述文件。当ICC文件采用内嵌方式时，则属于标准的PDF/X-4文件。<br/>
+						<span class="class___tab">&#9;</span>&nbsp;&nbsp;&nbsp;&nbsp;PDF/X-5&nbsp;。这是ISO在2008年基于PDF1.6以及PDF1.7版本指定的PDF/X标准。它是PDF/X-4的扩展，与PDF/X-4的最大区别是PDF/X-5允许在文件中使用OPI对象。在PDF/X-5标准中，PDF/X-5g是PDF/X-4的扩展，PDF/X-5pg则是PDF/X-4p的扩展，二者都支持OPI对象，而PDF/X-5也是PDF/X-4p的扩展，它可以接受RGB、灰阶以及CMYK以外的色彩模式，但是，这个特点可能会引起不必要的印前色彩问题。<br/>
+					</div>
+					<span class="class___tab">&#9;</span><a target="_blank" href="http://blog.nsfocus.net/pdf-vul/">PDF中的Javascript利用 – 绿盟科技技术博客</a>
+					<br/>
+					<span class="class___tab">&#9;</span><a target="_blank" href="https://www.duoduoyin.com/yinshuajishuinfo/2633.html">如何制作PDF/X-3 及PDF/X-4的印刷文件</a>
+				</div>
+			</section>
+		</article>
+	</body>
+</html>
