@@ -7,6 +7,23 @@
 		<style>
 		</style>
 		<script>
+			const add_fold = function(currentScript) {
+				const cs = currentScript;
+				const pn = cs.parentNode;
+				const ppn = pn.parentNode;
+				ppn.children[0].addEventListener('click', function(e) {
+					let display = pn.style.getPropertyValue('display');
+					if (display) {
+						ppn.children[0].textContent = '-';
+						pn.style.removeProperty('display');
+					} else {
+						ppn.children[0].textContent = '+';
+						pn.style.setProperty('display', 'none');
+					}
+				});
+			}
+		</script>
+		<script>
 		</script>
 	</head>
 	<body>
@@ -125,6 +142,21 @@
 						<li><a target="_blank" href="./archive/pdf/pdf_specification/pdf_specification_v1_7/adobe_supplement_iso32000.pdf">adobe_supplement_iso32000.pdf</a></li>
 						<br/>
 						<li><a target="_blank" href="./category/PDF/PDF.html">pdf log</a></li>
+					</ul>
+				</div>
+			</section>
+			<section>
+				<h2>PostScript</h2>
+				<div>
+					<ul>
+						<li><a target="_blank" href="https://blog.csdn.net/kingmax54212008/article/details/52540349">PostScript（PS 格式）讲解_Jaylon Wang的专栏-CSDN博客_postscript格式</a></li>
+						<div>
+							<span style="display : inline-block; border : 1px solid black; width : 14px; text-align : center;">+</span><span>为防链接失效的本地截图</span>
+							<div style="display:none;">
+								<script>add_fold(document.currentScript);</script>
+								<img src="./category/PostScript/refs/imgs/PostScript_PS 格式_讲解.png"/>
+							</div>
+						</div>
 					</ul>
 				</div>
 			</section>
